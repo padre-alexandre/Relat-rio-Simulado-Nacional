@@ -1,0 +1,52 @@
+div[data-baseweb="select"] > div {
+    background-color: #ffd8f8;
+}
+
+.st-db {
+    border-bottom-color: #FFF0FC;
+}
+
+.st-da {
+    border-top-color: #FFF0FC;
+}
+
+.st-d9 {
+    border-right-color: #FFF0FC;
+}
+
+.st-d8 {
+    border-left-color: #FFF0FC;
+}
+
+.st-ez {
+    border-bottom-color: #FFF0FC;
+}
+
+.st-ey {
+    border-top-color: #FFF0FC;
+}
+
+.st-ex {
+    border-right-color: #FFF0FC;
+}
+
+.st-ew {
+    border-left-color: #FFF0FC;
+}
+
+.highlight {
+    border-radius: 0.4rem;
+    color: white;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .bold {
+    padding-left: 1rem;
+    font-weight: 700;
+  }
+  .blue {
+    background-color: lightcoral;
+  }
+  .red {
+    background-color: lightblue;
+  }
