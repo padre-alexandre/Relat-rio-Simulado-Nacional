@@ -240,7 +240,7 @@ if nome_aluno3 != 'Nome':
                 value=resultados_gerais_aluno['Classificação'][0],
                 number={'suffix': "º", "font": {"size": 40, 'color': "#C81F6D", 'family': "Arial"}},
                 delta={'position': "bottom", 'reference': 1, 'relative': False},
-                domain={'x': [0, 1], 'y': [0, 0.9]}))
+                domain={'x': [0, 1], 'y': [0, 9]}))
             fig_c3.update_layout(autosize=False,
                                  width=350, height=90, margin=dict(l=20, r=20, b=20, t=20),
                                  paper_bgcolor="#FFF0FC", font={'size': 20})
