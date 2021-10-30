@@ -109,7 +109,7 @@ html_br="""
 """
 st.markdown(html_br, unsafe_allow_html=True)
 if nome_aluno3 != 'Nome':
-    
+
     resultados_gerais_aluno = resultados_gerais3[resultados_gerais3['Nome do aluno(a)'] == nome_aluno3].reset_index()
     resultados_gerais_aluno.rename(columns = {'index':'Classificação'}, inplace = True)
     resultados_gerais_aluno['Classificação'][0] = resultados_gerais_aluno['Classificação'][0] + 1
@@ -204,7 +204,7 @@ if nome_aluno3 != 'Nome':
             fig_c1 = go.Figure(go.Indicator(
                 mode="number",
                 value=round(resultados_gerais_aluno['Nota na questão'][0],1),
-                number={'suffix': "", "font": {"size": 50, 'color': "#C81F6D", 'family': "Arial"}},
+                number={'suffix': "", "font": {"size": 40, 'color': "#C81F6D", 'family': "Arial"}},
                 delta={'position': "bottom", 'reference': 46, 'relative': False},
                 domain={'x': [0, 1], 'y': [0, 1]}))
             fig_c1.update_layout(autosize=False,
@@ -219,7 +219,7 @@ if nome_aluno3 != 'Nome':
             fig_c2 = go.Figure(go.Indicator(
                 mode="number",
                 value=resultados_gerais_aluno['Acerto'][0],
-                number={'suffix': "", "font": {"size": 50, 'color': "#C81F6D", 'family': "Arial"}, 'valueformat': ',f'},
+                number={'suffix': "", "font": {"size": 40, 'color': "#C81F6D", 'family': "Arial"}, 'valueformat': ',f'},
                 delta={'position': "bottom", 'reference': 92700},
                 domain={'x': [0, 1], 'y': [0, 1]}))
             fig_c2.update_layout(autosize=False,
