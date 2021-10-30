@@ -1,11 +1,3 @@
 [theme]
 
-primaryColor = '#FFF0FC'
-
 backgroundColor = '#FFF0FC'
-
-secondaryBackgroundColor = '#FFF0FC'
-
-textColor = '#C81F6D'
-
-font = "monospace"
