@@ -61,7 +61,6 @@ html_header="""
 <h1 style="font-size:300%; color: #FF00CE; font-family:Georgia"> SIMULADO NACIONAL INSPER<br>
  <h2 style="color: #FF00CE; font-family:Georgia">RELATÓRIO</h3> <br>
  <hr style= "  display: block;
-  color: #FF00CE;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
   margin-left: auto;
@@ -146,11 +145,23 @@ if nome_aluno3 != 'Nome':
     #footer {visibility: hidden;}
     #</style> """, unsafe_allow_html=True)
 
+    html_header_geral="""
+    <h2 style="color: #FF00CE; font-family:Georgia"> GERAL<br>
+     <hr style= "  display: block;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      margin-left: auto;
+      margin-right: auto;
+      border-style: inset;
+      border-width: 1.5px;"></h2>
+    """
+    st.markdown(html_header_geral, unsafe_allow_html=True)
+    
     html_card_header1="""
     <div class="card">
       <div class="card-body" style="border-radius: 10px 10px 0px 0px; background: #ffd8f8; padding-top: 12px; width: 350px;
        height: 50px;">
-        <h4 class="card-title" style="background-color:#ffd8f8; color:#C81F6D; font-family:Georgia; text-align: center; padding: 0px 0;">Resultado Geral</h4>
+        <h4 class="card-title" style="background-color:#ffd8f8; color:#C81F6D; font-family:Georgia; text-align: center; padding: 0px 0;">Nota</h4>
       </div>
     </div>
     """
