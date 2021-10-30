@@ -171,7 +171,7 @@ if nome_aluno3 != 'Nome':
     """
     html_card_footer2="""
     <div class="card">
-      <div class="card-body" style="border-radius: 0px 0px 10px 10px; background: #ffd8f8; padding-top: 1rem;; width: 350px;
+      <div class="card-body" style="border-radius: 0px 0px 10px 10px; background: #ffd8f8; padding-top: 10px; width: 350px;
        height: 50px;">
         <p class="card-title" style="background-color:#ffd8f8; color:#C81F6D; font-family:Georgia; text-align: center; padding: 0px 0;">Total de questões: 90</p>
       </div>
