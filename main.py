@@ -61,6 +61,7 @@ html_header="""
 <h1 style="font-size:300%; color: #FF00CE; font-family:Georgia"> SIMULADO NACIONAL INSPER<br>
  <h2 style="color: #FF00CE; font-family:Georgia">RELATÓRIO</h3> <br>
  <hr style= "  display: block;
+  color: #FF00CE;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
   margin-left: auto;
