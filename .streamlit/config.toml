@@ -1,2 +1,11 @@
-backgroundColor = '#FFF0FC'
+[theme]
 
+primaryColor = '#27CCAE'
+
+backgroundColor = '#F6F3fE'
+
+secondaryBackgroundColor = '#F0F2F6'
+
+textColor = '#33578A'
+
+font = "monospace"
