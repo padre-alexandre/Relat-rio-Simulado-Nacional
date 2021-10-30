@@ -208,7 +208,7 @@ if nome_aluno3 != 'Nome':
                 delta={'position': "bottom", 'reference': 46, 'relative': False},
                 domain={'x': [0, 1], 'y': [0, 1]}))
             fig_c1.update_layout(autosize=False,
-                                 width=350, height=90, margin=dict(l=20, r=20, b=20, t=20),
+                                 width=350, height=90, margin=dict(l=20, r=20, b=0, t=20),
                                  paper_bgcolor="#FFF0FC", font={'size': 20})
             st.plotly_chart(fig_c1)
             st.markdown(html_card_footer1, unsafe_allow_html=True)
