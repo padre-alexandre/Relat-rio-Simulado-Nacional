@@ -149,7 +149,7 @@ if nome_aluno3 != 'Nome':
     <div class="card">
       <div class="card-body" style="border-radius: 10px 10px 0px 0px; background: #ffd8f8; padding-top: 5px; width: 350px;
        height: 50px;">
-        <h3 class="card-title" style="background-color:#ffd8f8; color:#C81F6D; font-family:Georgia; font-size:200; text-align: center; padding: 0px 0;">Resultado Geral</h3>
+        <h3 class="card-title" style="background-color:#ffd8f8; color:#C81F6D; font-family:Georgia; text-align: center; padding: 0px 0;">Resultado Geral</h3>
       </div>
     </div>
     """
