@@ -146,7 +146,7 @@ if nome_aluno3 != 'Nome':
     #</style> """, unsafe_allow_html=True)
 
     html_header_geral="""
-    <h2 style="font-size:80%; color: #FF00CE; font-family:Georgia"> GERAL<br>
+    <h2 style="font-size:200%; color: #FF00CE; font-family:Georgia"> GERAL<br>
      <hr style= "  display: block;
       margin-top: 0.5em;
       margin-bottom: 0.5em;
