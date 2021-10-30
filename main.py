@@ -148,7 +148,7 @@ if nome_aluno3 != 'Nome':
     html_card_header1="""
     <div class="card">
       <div class="card-body" style="border-radius: 10px 10px 0px 0px; background: #ffd8f8; padding-top: 5px; width: 350px;
-       height: 40px;">
+       height: 50px;">
         <h3 class="card-title" style="background-color:#ffd8f8; color:#C81F6D; font-family:Georgia; text-align: center; padding: 0px 0;">Resultado Geral</h3>
       </div>
     </div>
@@ -204,7 +204,7 @@ if nome_aluno3 != 'Nome':
             fig_c1 = go.Figure(go.Indicator(
                 mode="number",
                 value=round(resultados_gerais_aluno['Nota na questão'][0],1),
-                number={'suffix': "", "font": {"size": 40, 'color': "#C81F6D", 'family': "Arial"}},
+                number={'suffix': "", "font": {"size": 30, 'color': "#C81F6D", 'family': "Arial"}},
                 delta={'position': "bottom", 'reference': 46, 'relative': False},
                 domain={'x': [0, 1], 'y': [0, 1]}))
             fig_c1.update_layout(autosize=False,
@@ -219,11 +219,11 @@ if nome_aluno3 != 'Nome':
             fig_c2 = go.Figure(go.Indicator(
                 mode="number",
                 value=resultados_gerais_aluno['Acerto'][0],
-                number={'suffix': "", "font": {"size": 40, 'color': "#C81F6D", 'family': "Arial"}, 'valueformat': ',f'},
+                number={'suffix': "", "font": {"size": 30, 'color': "#C81F6D", 'family': "Arial"}, 'valueformat': ',f'},
                 delta={'position': "bottom", 'reference': 92700},
                 domain={'x': [0, 1], 'y': [0, 1]}))
             fig_c2.update_layout(autosize=False,
-                                 width=350, height=90, margin=dict(l=20, r=20, b=20, t=30),
+                                 width=350, height=90, margin=dict(l=20, r=20, b=20, t=20),
                                  paper_bgcolor="#FFF0FC", font={'size': 20})
             fig_c2.update_traces(delta_decreasing_color="#3D9970",
                                  delta_increasing_color="#FF4136",
@@ -238,7 +238,7 @@ if nome_aluno3 != 'Nome':
             fig_c3 = go.Figure(go.Indicator(
                 mode="number",
                 value=resultados_gerais_aluno['Classificação'][0],
-                number={'suffix': "", "font": {"size": 40, 'color': "#C81F6D", 'family': "Arial"}},
+                number={'suffix': "", "font": {"size": 30, 'color': "#C81F6D", 'family': "Arial"}},
                 delta={'position': "bottom", 'reference': 1, 'relative': False},
                 domain={'x': [0, 1], 'y': [0, 1]}))
             fig_c3.update_layout(autosize=False,
