@@ -147,9 +147,9 @@ if nome_aluno3 != 'Nome':
 
     html_card_header1="""
     <div class="card">
-      <div class="card-body" style="border-radius: 10px 10px 0px 0px; background: #ffd8f8; padding-top: 10px; width: 350px;
+      <div class="card-body" style="border-radius: 10px 10px 0px 0px; background: #ffd8f8; padding-top: 12px; width: 350px;
        height: 50px;">
-        <h3 class="card-title" style="background-color:#ffd8f8; color:#C81F6D; font-family:Georgia; text-align: center; padding: 0px 0;">Resultado Geral</h3>
+        <h4 class="card-title" style="background-color:#ffd8f8; color:#C81F6D; font-family:Georgia; text-align: center; padding: 0px 0;">Resultado Geral</h4>
       </div>
     </div>
     """
@@ -163,9 +163,9 @@ if nome_aluno3 != 'Nome':
     """
     html_card_header2="""
     <div class="card">
-      <div class="card-body" style="border-radius: 10px 10px 0px 0px; background: #ffd8f8; padding-top: 10px; width: 350px;
+      <div class="card-body" style="border-radius: 10px 10px 0px 0px; background: #ffd8f8; padding-top: 12px; width: 350px;
        height: 50px;">
-        <h3 class="card-title" style="background-color:#ffd8f8; color:#C81F6D; font-family:Georgia; text-align: center; padding: 0px 0;">Número de acertos</h3>
+        <h4 class="card-title" style="background-color:#ffd8f8; color:#C81F6D; font-family:Georgia; text-align: center; padding: 0px 0;">Número de acertos</h4>
       </div>
     </div>
     """
@@ -179,7 +179,7 @@ if nome_aluno3 != 'Nome':
     """
     html_card_header3="""
     <div class="card">
-      <div class="card-body" style="border-radius: 10px 10px 0px 0px; background: #ffd8f8; padding-top: 10px; width: 350px;
+      <div class="card-body" style="border-radius: 10px 10px 0px 0px; background: #ffd8f8; padding-top: 12px; width: 350px;
        height: 50px;">
         <h4 class="card-title" style="background-color:#ffd8f8; color:#C81F6D; font-family:Georgia; text-align: center; padding: 0px 0;">Classificação</h4>
       </div>
