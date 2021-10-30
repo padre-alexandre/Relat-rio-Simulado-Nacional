@@ -155,7 +155,7 @@ if nome_aluno3 != 'Nome':
     """
     html_card_footer1="""
     <div class="card">
-      <div class="card-body" style="border-radius: 0px 0px 10px 10px; background: #ffd8f8; padding-top: 1rem;; width: 350px;
+      <div class="card-body" style="border-radius: 0px 0px 10px 10px; background: #ffd8f8; padding-top: 12px; width: 350px;
        height: 50px;">
         <p class="card-title" style="background-color:#ffd8f8; color:#C81F6D; font-family:Georgia; text-align: center; padding: 0px 0;">Nota máxima: 1000</p>
       </div>
@@ -187,7 +187,7 @@ if nome_aluno3 != 'Nome':
     """
     html_card_footer3="""
     <div class="card">
-      <div class="card-body" style="border-radius: 0px 0px 10px 10px; background: #ffd8f8; padding-top: 1rem;; width: 350px;
+      <div class="card-body" style="border-radius: 0px 0px 10px 10px; background: #ffd8f8; padding-top: 12px; width: 350px;
        height: 50px;">
         <p class="card-title" style="background-color:#ffd8f8; color:#C81F6D; font-family:Georgia; text-align: center; padding: 0px 0;">Quantidade de alunos: """+str(numero_candidatos)+"""</p>
       </div>
