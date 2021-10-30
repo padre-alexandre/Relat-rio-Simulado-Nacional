@@ -323,3 +323,66 @@ if nome_aluno3 != 'Nome':
       </div>
     </div>
     """
+
+    ### Block 1#########################################################################################
+    with st.container():
+        col1, col2, col3, col4, col5, col6, col7 = st.columns([1,20,1,20,1,20,1])
+        with col1:
+            st.write("")
+        with col2:
+            st.markdown(html_card_header1_mat, unsafe_allow_html=True)
+            fig_c1 = go.Figure(go.Indicator(
+                mode="number",
+                value=round(resultados_gerais_aluno['Nota na questão'][0],1),
+                number={'suffix': "", "font": {"size": 40, 'color': "#C81F6D", 'family': "Arial"}},
+                delta={'position': "bottom", 'reference': 46, 'relative': False},
+                domain={'x': [0, 1], 'y': [0, 1]}))
+            fig_c1.update_layout(autosize=False,
+                                 width=350, height=90, margin=dict(l=20, r=20, b=20, t=50),
+                                 paper_bgcolor="#FFF0FC", font={'size': 20})
+            st.plotly_chart(fig_c1)
+            st.markdown(html_card_footer1_mat, unsafe_allow_html=True)
+        with col3:
+            st.write("")
+        with col4:
+            st.markdown(html_card_header2_mat, unsafe_allow_html=True)
+            fig_c2 = go.Figure(go.Indicator(
+                mode="number",
+                value=resultados_gerais_aluno['Acerto'][0],
+                number={'suffix': "", "font": {"size": 40, 'color': "#C81F6D", 'family': "Arial"}, 'valueformat': ',f'},
+                delta={'position': "bottom", 'reference': 92700},
+                domain={'x': [0, 1], 'y': [0, 1]}))
+            fig_c2.update_layout(autosize=False,
+                                 width=350, height=90, margin=dict(l=20, r=20, b=20, t=50),
+                                 paper_bgcolor="#FFF0FC", font={'size': 20})
+            fig_c2.update_traces(delta_decreasing_color="#3D9970",
+                                 delta_increasing_color="#FF4136",
+                                 delta_valueformat='f',
+                                 selector=dict(type='indicator'))
+            st.plotly_chart(fig_c2)
+            st.markdown(html_card_footer2_mat, unsafe_allow_html=True)
+        with col5:
+            st.write("")
+        with col6:
+            st.markdown(html_card_header3_mat, unsafe_allow_html=True)
+            fig_c3 = go.Figure(go.Indicator(
+                mode="number",
+                value=resultados_gerais_aluno['Classificação'][0],
+                number={'suffix': "º", "font": {"size": 40, 'color': "#C81F6D", 'family': "Arial"}},
+                delta={'position': "bottom", 'reference': 1, 'relative': False},
+                domain={'x': [0, 1], 'y': [0, 1]}))
+            fig_c3.update_layout(autosize=False,
+                                 width=350, height=90, margin=dict(l=20, r=20, b=20, t=50),
+                                 paper_bgcolor="#FFF0FC", font={'size': 20})
+            fig_c3.update_traces(delta_decreasing_color="#3D9970",
+                                 delta_increasing_color="#FF4136",
+                                 delta_valueformat='.3f',
+                                 selector=dict(type='indicator'))
+            st.plotly_chart(fig_c3)
+            st.markdown(html_card_footer3_mat, unsafe_allow_html=True)
+        with col7:
+            st.write("")
+    html_br="""
+    <br>
+    """
+    st.markdown(html_br, unsafe_allow_html=True)
