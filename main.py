@@ -244,10 +244,10 @@ if nome_aluno3 != 'Nome':
             fig_c3.update_layout(autosize=False,
                                  width=350, height=90, margin=dict(l=20, r=20, b=20, t=20),
                                  paper_bgcolor="#FFF0FC", font={'size': 20})
-            fig_c3.update_traces(delta_decreasing_color="#3D9970",
-                                 delta_increasing_color="#FF4136",
-                                 delta_valueformat='.3f',
-                                 selector=dict(type='indicator'))
+            #fig_c3.update_traces(delta_decreasing_color="#3D9970",
+            #                     delta_increasing_color="#FF4136",
+            #                     delta_valueformat='.3f',
+            #                     selector=dict(type='indicator'))
             st.plotly_chart(fig_c3)
             st.markdown(html_card_footer3, unsafe_allow_html=True)
         with col7:
