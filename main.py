@@ -242,7 +242,7 @@ if nome_aluno3 != 'Nome':
                 delta={'position': "bottom", 'reference': 1, 'relative': False},
                 domain={'x': [0, 1], 'y': [0, 1]}))
             fig_c3.update_layout(autosize=False,
-                                 width=350, height=90, margin=dict(l=20, r=20, b=20, t=200),
+                                 width=350, height=90, margin=dict(l=20, r=20, b=20, t=20),
                                  paper_bgcolor="#FFF0FC", font={'size': 20})
             fig_c3.update_traces(delta_decreasing_color="#3D9970",
                                  delta_increasing_color="#FF4136",
