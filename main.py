@@ -235,20 +235,20 @@ if nome_aluno3 != 'Nome':
             st.write("")
         with col6:
             st.markdown(html_card_header3, unsafe_allow_html=True)
-            #fig_c3 = go.Figure(go.Indicator(
-            #    mode="number",
-            #    value=resultados_gerais_aluno['Classificação'][0],
-            #    number={'suffix': "º", "font": {"size": 40, 'color': "#C81F6D", 'family': "Arial"}},
-            #    delta={'position': "bottom", 'reference': 1, 'relative': False},
-            #    domain={'x': [0, 1], 'y': [0, 1]}))
-            #fig_c3.update_layout(autosize=False,
-            #                     width=350, height=90, margin=dict(l=20, r=20, b=20, t=20),
-            #                     paper_bgcolor="#FFF0FC", font={'size': 20})
-            #fig_c3.update_traces(delta_decreasing_color="#3D9970",
-            #                     delta_increasing_color="#FF4136",
-            #                     delta_valueformat='.3f',
-            #                     selector=dict(type='indicator'))
-            #st.plotly_chart(fig_c3)
+            fig_c3 = go.Figure(go.Indicator(
+                mode="number",
+                value=resultados_gerais_aluno['Classificação'][0],
+                number={'suffix': "º", "font": {"size": 40, 'color': "#C81F6D", 'family': "Arial"}},
+                delta={'position': "bottom", 'reference': 1, 'relative': False},
+                domain={'x': [0, 1], 'y': [0, 0.9]}))
+            fig_c3.update_layout(autosize=False,
+                                 width=350, height=90, margin=dict(l=20, r=20, b=20, t=20),
+                                 paper_bgcolor="#FFF0FC", font={'size': 20})
+            fig_c3.update_traces(delta_decreasing_color="#3D9970",
+                                 delta_increasing_color="#FF4136",
+                                 delta_valueformat='.3f',
+                                 selector=dict(type='indicator'))
+            st.plotly_chart(fig_c3)
             st.markdown(html_card_footer3, unsafe_allow_html=True)
         with col7:
             st.write("")
