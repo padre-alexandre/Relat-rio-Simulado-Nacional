@@ -1,3 +1,7 @@
+body {
+    background-color: #FFF0FC;
+}
+
 div[data-baseweb="select"] > div {
     background-color: #ffd8f8;
 }
