@@ -118,27 +118,6 @@ if nome_aluno3 != 'Nome':
 
     numero_candidatos = len(resultados_gerais3['Nome do aluno(a)'])
 
-    #### Resultados gerais por disciplina
-    #
-    #resultados_gerais_disciplina = base_adm_eco_dir.groupby(['Nome da avaliação','Turma','Nome do aluno(a)','Disciplina']).sum().reset_index()
-    #resultados_gerais_disciplina2 = resultados_gerais_disciplina.drop(columns = ['Número da questão'])
-    #resultados_gerais_disciplina3 = resultados_gerais_disciplina2.sort_values(by = 'Nota na questão', ascending = False).reset_index(drop = True)
-    #resultados_gerais_disciplina4 = resultados_gerais_disciplina3.groupby('Disciplina').mean().reset_index()
-    #resultados_gerais_disciplina5 = resultados_gerais_disciplina4.sort_values(by = 'Disciplina', ascending = False)
-    #
-    #### Resultados do aluno por disciplina
-    #
-    #resultados_disciplina_aluno = resultados_gerais_disciplina3[resultados_gerais_disciplina3['Nome do aluno(a)'] == nome_aluno3].reset_index()
-    #resultados_disciplina_aluno2 = resultados_disciplina_aluno.sort_values(by = 'Disciplina', ascending = False)
-    #st.dataframe(resultados_gerais_disciplina5)
-    #
-    #fig = px.bar(resultados_disciplina_aluno2, x = resultados_disciplina_aluno2['Disciplina'], y = resultados_disciplina_aluno2['Acerto'], range_y=[0,30], color_discrete_sequence = [cor_barra]*len(resultados_disciplina_aluno2))
-    #fig.add_scatter(x = resultados_gerais_disciplina5['Disciplina'], y = resultados_gerais_disciplina5['Acerto'],mode='lines+markers', name = 'Média dos alunos', line=dict(color='black'))     
-    #st.plotly_chart(fig)               
-    #
-    #
-    #
-
     html_header_geral="""
     <h2 style="font-size:200%; color: #FF00CE; font-family:Georgia"> GERAL<br>
      <hr style= "  display: block;
@@ -263,6 +242,93 @@ if nome_aluno3 != 'Nome':
     """
     st.markdown(html_br, unsafe_allow_html=True)
 
+    #### Resultados gerais por disciplina
+    
+    resultados_gerais_disciplina = base_adm_eco_dir.groupby(['Nome da avaliação','Turma','Nome do aluno(a)','Disciplina']).sum().reset_index()
+    resultados_gerais_disciplina2 = resultados_gerais_disciplina.drop(columns = ['Número da questão'])
+    resultados_gerais_disciplina3 = resultados_gerais_disciplina2.sort_values(by = 'Nota na questão', ascending = False).reset_index(drop = True)
+    resultados_gerais_disciplina4 = resultados_gerais_disciplina3.groupby('Disciplina').mean().reset_index()
+    resultados_gerais_disciplina5 = resultados_gerais_disciplina4.sort_values(by = 'Disciplina', ascending = False)
+    
+    ### Resultados do aluno por disciplina
+    
+    resultados_disciplina_aluno = resultados_gerais_disciplina3[resultados_gerais_disciplina3['Nome do aluno(a)'] == nome_aluno3].reset_index()
+    resultados_disciplina_aluno2 = resultados_disciplina_aluno.sort_values(by = 'Disciplina', ascending = False)
+    
+    resultados_matematica = resultados_disciplina_aluno2[resultados_disciplina_aluno2['Disciplina'] == 'Matemática'].reset_index()
+    resultados_linguagens = resultados_disciplina_aluno2[resultados_disciplina_aluno2['Disciplina'] == 'Linguagens'].reset_index()
+    resultados_ciencias_hum = resultados_disciplina_aluno2[resultados_disciplina_aluno2['Disciplina'] == 'Ciências Humanas'].reset_index()
+    resultados_ciencias_nat = resultados_disciplina_aluno2[resultados_disciplina_aluno2['Disciplina'] == 'Ciências na Natureza'].reset_index()
+
+    resultados_gerais_disciplina3_mat = resultados_gerais_disciplina3[resultados_gerais_disciplina3['Disciplina'] == 'Matemática'].reset_index(drop = True).reset_index()
+    resultados_gerais_disciplina3_lin = resultados_gerais_disciplina3[resultados_gerais_disciplina3['Disciplina'] == 'Linguagens'].reset_index(drop = True).reset_index()
+    resultados_gerais_disciplina3_hum = resultados_gerais_disciplina3[resultados_gerais_disciplina3['Disciplina'] == 'Ciências Humanas'].reset_index(drop = True).reset_index()
+    resultados_gerais_disciplina3_nat = resultados_gerais_disciplina3[resultados_gerais_disciplina3['Disciplina'] == 'Ciências da Natureza'].reset_index(drop = True).reset_index()
+               
+    
+    classificacao_aluno_mat = resultados_gerais_disciplina3_mat[resultados_gerais_disciplina3_mat['Nome do aluno(a)'] == nome_aluno3].reset_index()
+    classificacao_aluno_lin = resultados_gerais_disciplina3_lin[resultados_gerais_disciplina3_lin['Nome do aluno(a)'] == nome_aluno3].reset_index()
+    classificacao_aluno_hum = resultados_gerais_disciplina3_hum[resultados_gerais_disciplina3_hum['Nome do aluno(a)'] == nome_aluno3].reset_index()
+    classificacao_aluno_nat = resultados_gerais_disciplina3_nat[resultados_gerais_disciplina3_nat['Nome do aluno(a)'] == nome_aluno3].reset_index()  
+
+    if len(resultados_ciencias_hum['Disciplina']) == 0:
+        resultados_ciencias_fim = resultados_ciencias_nat.copy()
+        resultados_gerais_disciplina3_fim = resultados_gerais_disciplina3_nat.copy()
+        classificacao_aluno_fim = classificacao_aluno_nat.copy()
+    else:
+        resultados_ciencias_fim = resultados_ciencias_hum.copy()
+        resultados_gerais_disciplina3_fim = resultados_gerais_disciplina3_hum.copy()
+        classificacao_aluno_fim = classificacao_aluno_hum.copy()
+
+    html_card_header1_disc="""
+    <div class="card">
+      <div class="card-body" style="border-radius: 10px 10px 0px 0px; background: #ffd8f8; padding-top: 12px; width: 350px;
+       height: 50px;">
+        <h4 class="card-title" style="background-color:#ffd8f8; color:#C81F6D; font-family:Georgia; text-align: center; padding: 0px 0;">Nota</h4>
+      </div>
+    </div>
+    """
+    html_card_footer1_disc="""
+    <div class="card">
+      <div class="card-body" style="border-radius: 0px 0px 10px 10px; background: #ffd8f8; padding-top: 12px; width: 350px;
+       height: 50px;">
+        <p class="card-title" style="background-color:#ffd8f8; color:#C81F6D; font-family:Georgia; text-align: center; padding: 0px 0;">Nota máxima: 1000</p>
+      </div>
+    </div>
+    """
+    html_card_header2_disc="""
+    <div class="card">
+      <div class="card-body" style="border-radius: 10px 10px 0px 0px; background: #ffd8f8; padding-top: 12px; width: 350px;
+       height: 50px;">
+        <h4 class="card-title" style="background-color:#ffd8f8; color:#C81F6D; font-family:Georgia; text-align: center; padding: 0px 0;">Número de acertos</h4>
+      </div>
+    </div>
+    """
+    html_card_footer2_disc="""
+    <div class="card">
+      <div class="card-body" style="border-radius: 0px 0px 10px 10px; background: #ffd8f8; padding-top: 12px; width: 350px;
+       height: 50px;">
+        <p class="card-title" style="background-color:#ffd8f8; color:#C81F6D; font-family:Georgia; text-align: center; padding: 0px 0;">Total de questões: 30</p>
+      </div>
+    </div>
+    """
+    html_card_header3_disc="""
+    <div class="card">
+      <div class="card-body" style="border-radius: 10px 10px 0px 0px; background: #ffd8f8; padding-top: 12px; width: 350px;
+       height: 50px;">
+        <h4 class="card-title" style="background-color:#ffd8f8; color:#C81F6D; font-family:Georgia; text-align: center; padding: 0px 0;">Classificação</h4>
+      </div>
+    </div>
+    """
+    html_card_footer3_disc="""
+    <div class="card">
+      <div class="card-body" style="border-radius: 0px 0px 10px 10px; background: #ffd8f8; padding-top: 12px; width: 350px;
+       height: 50px;">
+        <p class="card-title" style="background-color:#ffd8f8; color:#C81F6D; font-family:Georgia; text-align: center; padding: 0px 0;">Quantidade de alunos: """+str(numero_candidatos)+"""</p>
+      </div>
+    </div>
+    """
+
     html_header_mat="""
     <h2 style="font-size:200%; color: #FF00CE; font-family:Georgia"> MATEMÁTICA<br>
      <hr style= "  display: block;
@@ -275,65 +341,16 @@ if nome_aluno3 != 'Nome':
     """
     st.markdown(html_header_mat, unsafe_allow_html=True)
 
-    html_card_header1_mat="""
-    <div class="card">
-      <div class="card-body" style="border-radius: 10px 10px 0px 0px; background: #ffd8f8; padding-top: 12px; width: 350px;
-       height: 50px;">
-        <h4 class="card-title" style="background-color:#ffd8f8; color:#C81F6D; font-family:Georgia; text-align: center; padding: 0px 0;">Nota</h4>
-      </div>
-    </div>
-    """
-    html_card_footer1_mat="""
-    <div class="card">
-      <div class="card-body" style="border-radius: 0px 0px 10px 10px; background: #ffd8f8; padding-top: 12px; width: 350px;
-       height: 50px;">
-        <p class="card-title" style="background-color:#ffd8f8; color:#C81F6D; font-family:Georgia; text-align: center; padding: 0px 0;">Nota máxima: 1000</p>
-      </div>
-    </div>
-    """
-    html_card_header2_mat="""
-    <div class="card">
-      <div class="card-body" style="border-radius: 10px 10px 0px 0px; background: #ffd8f8; padding-top: 12px; width: 350px;
-       height: 50px;">
-        <h4 class="card-title" style="background-color:#ffd8f8; color:#C81F6D; font-family:Georgia; text-align: center; padding: 0px 0;">Número de acertos</h4>
-      </div>
-    </div>
-    """
-    html_card_footer2_mat="""
-    <div class="card">
-      <div class="card-body" style="border-radius: 0px 0px 10px 10px; background: #ffd8f8; padding-top: 12px; width: 350px;
-       height: 50px;">
-        <p class="card-title" style="background-color:#ffd8f8; color:#C81F6D; font-family:Georgia; text-align: center; padding: 0px 0;">Total de questões: 90</p>
-      </div>
-    </div>
-    """
-    html_card_header3_mat="""
-    <div class="card">
-      <div class="card-body" style="border-radius: 10px 10px 0px 0px; background: #ffd8f8; padding-top: 12px; width: 350px;
-       height: 50px;">
-        <h4 class="card-title" style="background-color:#ffd8f8; color:#C81F6D; font-family:Georgia; text-align: center; padding: 0px 0;">Classificação</h4>
-      </div>
-    </div>
-    """
-    html_card_footer3_mat="""
-    <div class="card">
-      <div class="card-body" style="border-radius: 0px 0px 10px 10px; background: #ffd8f8; padding-top: 12px; width: 350px;
-       height: 50px;">
-        <p class="card-title" style="background-color:#ffd8f8; color:#C81F6D; font-family:Georgia; text-align: center; padding: 0px 0;">Quantidade de alunos: """+str(numero_candidatos)+"""</p>
-      </div>
-    </div>
-    """
-
     ### Block 1#########################################################################################
     with st.container():
         col1, col2, col3, col4, col5, col6, col7 = st.columns([1,20,1,20,1,20,1])
         with col1:
             st.write("")
         with col2:
-            st.markdown(html_card_header1_mat, unsafe_allow_html=True)
+            st.markdown(html_card_header1_disc, unsafe_allow_html=True)
             fig_c1 = go.Figure(go.Indicator(
                 mode="number",
-                value=round(resultados_gerais_aluno['Nota na questão'][0],1),
+                value=round(2*resultados_matematica['Nota na questão'][0],1),
                 number={'suffix': "", "font": {"size": 40, 'color': "#C81F6D", 'family': "Arial"}},
                 delta={'position': "bottom", 'reference': 46, 'relative': False},
                 domain={'x': [0, 1], 'y': [0, 1]}))
@@ -341,14 +358,14 @@ if nome_aluno3 != 'Nome':
                                  width=350, height=90, margin=dict(l=20, r=20, b=20, t=50),
                                  paper_bgcolor="#FFF0FC", font={'size': 20})
             st.plotly_chart(fig_c1)
-            st.markdown(html_card_footer1_mat, unsafe_allow_html=True)
+            st.markdown(html_card_footer1_disc, unsafe_allow_html=True)
         with col3:
             st.write("")
         with col4:
-            st.markdown(html_card_header2_mat, unsafe_allow_html=True)
+            st.markdown(html_card_header2_disc, unsafe_allow_html=True)
             fig_c2 = go.Figure(go.Indicator(
                 mode="number",
-                value=resultados_gerais_aluno['Acerto'][0],
+                value=resultados_matematica['Acerto'][0],
                 number={'suffix': "", "font": {"size": 40, 'color': "#C81F6D", 'family': "Arial"}, 'valueformat': ',f'},
                 delta={'position': "bottom", 'reference': 92700},
                 domain={'x': [0, 1], 'y': [0, 1]}))
@@ -360,14 +377,14 @@ if nome_aluno3 != 'Nome':
                                  delta_valueformat='f',
                                  selector=dict(type='indicator'))
             st.plotly_chart(fig_c2)
-            st.markdown(html_card_footer2_mat, unsafe_allow_html=True)
+            st.markdown(html_card_footer2_disc, unsafe_allow_html=True)
         with col5:
             st.write("")
         with col6:
-            st.markdown(html_card_header3_mat, unsafe_allow_html=True)
+            st.markdown(html_card_header3_disc, unsafe_allow_html=True)
             fig_c3 = go.Figure(go.Indicator(
                 mode="number",
-                value=resultados_gerais_aluno['Classificação'][0],
+                value=classificacao_aluno_mat['index'][0]+1,
                 number={'suffix': "º", "font": {"size": 40, 'color': "#C81F6D", 'family': "Arial"}},
                 delta={'position': "bottom", 'reference': 1, 'relative': False},
                 domain={'x': [0, 1], 'y': [0, 1]}))
@@ -379,7 +396,171 @@ if nome_aluno3 != 'Nome':
                                  delta_valueformat='.3f',
                                  selector=dict(type='indicator'))
             st.plotly_chart(fig_c3)
-            st.markdown(html_card_footer3_mat, unsafe_allow_html=True)
+            st.markdown(html_card_footer3_disc, unsafe_allow_html=True)
+        with col7:
+            st.write("")
+    html_br="""
+    <br>
+    """
+    st.markdown(html_br, unsafe_allow_html=True)
+
+    html_header_lin="""
+    <h2 style="font-size:200%; color: #FF00CE; font-family:Georgia"> LINGUAGENS<br>
+     <hr style= "  display: block;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      margin-left: auto;
+      margin-right: auto;
+      border-style: inset;
+      border-width: 1.5px;"></h2>
+    """
+    st.markdown(html_header_lin, unsafe_allow_html=True)
+
+    ### Block 1#########################################################################################
+    with st.container():
+        col1, col2, col3, col4, col5, col6, col7 = st.columns([1,20,1,20,1,20,1])
+        with col1:
+            st.write("")
+        with col2:
+            st.markdown(html_card_header1_disc, unsafe_allow_html=True)
+            fig_c1 = go.Figure(go.Indicator(
+                mode="number",
+                value=round(4*resultados_linguagens['Nota na questão'][0],1),
+                number={'suffix': "", "font": {"size": 40, 'color': "#C81F6D", 'family': "Arial"}},
+                delta={'position': "bottom", 'reference': 46, 'relative': False},
+                domain={'x': [0, 1], 'y': [0, 1]}))
+            fig_c1.update_layout(autosize=False,
+                                 width=350, height=90, margin=dict(l=20, r=20, b=20, t=50),
+                                 paper_bgcolor="#FFF0FC", font={'size': 20})
+            st.plotly_chart(fig_c1)
+            st.markdown(html_card_footer1_disc, unsafe_allow_html=True)
+        with col3:
+            st.write("")
+        with col4:
+            st.markdown(html_card_header2_disc, unsafe_allow_html=True)
+            fig_c2 = go.Figure(go.Indicator(
+                mode="number",
+                value=resultados_linguagens['Acerto'][0],
+                number={'suffix': "", "font": {"size": 40, 'color': "#C81F6D", 'family': "Arial"}, 'valueformat': ',f'},
+                delta={'position': "bottom", 'reference': 92700},
+                domain={'x': [0, 1], 'y': [0, 1]}))
+            fig_c2.update_layout(autosize=False,
+                                 width=350, height=90, margin=dict(l=20, r=20, b=20, t=50),
+                                 paper_bgcolor="#FFF0FC", font={'size': 20})
+            fig_c2.update_traces(delta_decreasing_color="#3D9970",
+                                 delta_increasing_color="#FF4136",
+                                 delta_valueformat='f',
+                                 selector=dict(type='indicator'))
+            st.plotly_chart(fig_c2)
+            st.markdown(html_card_footer2_disc, unsafe_allow_html=True)
+        with col5:
+            st.write("")
+        with col6:
+            st.markdown(html_card_header3_disc, unsafe_allow_html=True)
+            fig_c3 = go.Figure(go.Indicator(
+                mode="number",
+                value=classificacao_aluno_lin['index'][0]+1,
+                number={'suffix': "º", "font": {"size": 40, 'color': "#C81F6D", 'family': "Arial"}},
+                delta={'position': "bottom", 'reference': 1, 'relative': False},
+                domain={'x': [0, 1], 'y': [0, 1]}))
+            fig_c3.update_layout(autosize=False,
+                                 width=350, height=90, margin=dict(l=20, r=20, b=20, t=50),
+                                 paper_bgcolor="#FFF0FC", font={'size': 20})
+            fig_c3.update_traces(delta_decreasing_color="#3D9970",
+                                 delta_increasing_color="#FF4136",
+                                 delta_valueformat='.3f',
+                                 selector=dict(type='indicator'))
+            st.plotly_chart(fig_c3)
+            st.markdown(html_card_footer3_disc, unsafe_allow_html=True)
+        with col7:
+            st.write("")
+    html_br="""
+    <br>
+    """
+    st.markdown(html_br, unsafe_allow_html=True)
+
+    html_header_hum="""
+    <h2 style="font-size:200%; color: #FF00CE; font-family:Georgia"> CIÊNCIAS HUMANAS<br>
+     <hr style= "  display: block;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      margin-left: auto;
+      margin-right: auto;
+      border-style: inset;
+      border-width: 1.5px;"></h2>
+    """
+
+    html_header_nat="""
+    <h2 style="font-size:200%; color: #FF00CE; font-family:Georgia"> CIÊNCIAS DA NATUREZA<br>
+     <hr style= "  display: block;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      margin-left: auto;
+      margin-right: auto;
+      border-style: inset;
+      border-width: 1.5px;"></h2>
+    """
+    if len(resultados_ciencias_hum['Disciplina']) == 0:
+        st.markdown(html_header_nat, unsafe_allow_html=True)
+    else:
+        st.markdown(html_header_hum, unsafe_allow_html=True)
+
+    ### Block 1#########################################################################################
+    with st.container():
+        col1, col2, col3, col4, col5, col6, col7 = st.columns([1,20,1,20,1,20,1])
+        with col1:
+            st.write("")
+        with col2:
+            st.markdown(html_card_header1_disc, unsafe_allow_html=True)
+            fig_c1 = go.Figure(go.Indicator(
+                mode="number",
+                value=round(4*resultados_ciencias_fim['Nota na questão'][0],1),
+                number={'suffix': "", "font": {"size": 40, 'color': "#C81F6D", 'family': "Arial"}},
+                delta={'position': "bottom", 'reference': 46, 'relative': False},
+                domain={'x': [0, 1], 'y': [0, 1]}))
+            fig_c1.update_layout(autosize=False,
+                                 width=350, height=90, margin=dict(l=20, r=20, b=20, t=50),
+                                 paper_bgcolor="#FFF0FC", font={'size': 20})
+            st.plotly_chart(fig_c1)
+            st.markdown(html_card_footer1_disc, unsafe_allow_html=True)
+        with col3:
+            st.write("")
+        with col4:
+            st.markdown(html_card_header2_disc, unsafe_allow_html=True)
+            fig_c2 = go.Figure(go.Indicator(
+                mode="number",
+                value=resultados_ciencias_fim['Acerto'][0],
+                number={'suffix': "", "font": {"size": 40, 'color': "#C81F6D", 'family': "Arial"}, 'valueformat': ',f'},
+                delta={'position': "bottom", 'reference': 92700},
+                domain={'x': [0, 1], 'y': [0, 1]}))
+            fig_c2.update_layout(autosize=False,
+                                 width=350, height=90, margin=dict(l=20, r=20, b=20, t=50),
+                                 paper_bgcolor="#FFF0FC", font={'size': 20})
+            fig_c2.update_traces(delta_decreasing_color="#3D9970",
+                                 delta_increasing_color="#FF4136",
+                                 delta_valueformat='f',
+                                 selector=dict(type='indicator'))
+            st.plotly_chart(fig_c2)
+            st.markdown(html_card_footer2_disc, unsafe_allow_html=True)
+        with col5:
+            st.write("")
+        with col6:
+            st.markdown(html_card_header3_disc, unsafe_allow_html=True)
+            fig_c3 = go.Figure(go.Indicator(
+                mode="number",
+                value=classificacao_aluno_fim['index'][0]+1,
+                number={'suffix': "º", "font": {"size": 40, 'color': "#C81F6D", 'family': "Arial"}},
+                delta={'position': "bottom", 'reference': 1, 'relative': False},
+                domain={'x': [0, 1], 'y': [0, 1]}))
+            fig_c3.update_layout(autosize=False,
+                                 width=350, height=90, margin=dict(l=20, r=20, b=20, t=50),
+                                 paper_bgcolor="#FFF0FC", font={'size': 20})
+            fig_c3.update_traces(delta_decreasing_color="#3D9970",
+                                 delta_increasing_color="#FF4136",
+                                 delta_valueformat='.3f',
+                                 selector=dict(type='indicator'))
+            st.plotly_chart(fig_c3)
+            st.markdown(html_card_footer3_disc, unsafe_allow_html=True)
         with col7:
             st.write("")
     html_br="""
