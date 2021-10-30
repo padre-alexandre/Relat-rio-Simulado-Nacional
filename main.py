@@ -139,12 +139,6 @@ if nome_aluno3 != 'Nome':
     #
     #
 
-
-    #st.markdown(""" <style>
-    ##MainMenu {visibility: hidden;}
-    #footer {visibility: hidden;}
-    #</style> """, unsafe_allow_html=True)
-
     html_header_geral="""
     <h2 style="font-size:200%; color: #FF00CE; font-family:Georgia"> GERAL<br>
      <hr style= "  display: block;
@@ -268,3 +262,64 @@ if nome_aluno3 != 'Nome':
     <br>
     """
     st.markdown(html_br, unsafe_allow_html=True)
+
+    html_header_mat="""
+    <h2 style="font-size:200%; color: #FF00CE; font-family:Georgia"> MATEMÁTICA<br>
+     <hr style= "  display: block;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      margin-left: auto;
+      margin-right: auto;
+      border-style: inset;
+      border-width: 1.5px;"></h2>
+    """
+    st.markdown(html_header_mat, unsafe_allow_html=True)
+
+    html_card_header1_mat="""
+    <div class="card">
+      <div class="card-body" style="border-radius: 10px 10px 0px 0px; background: #ffd8f8; padding-top: 12px; width: 350px;
+       height: 50px;">
+        <h4 class="card-title" style="background-color:#ffd8f8; color:#C81F6D; font-family:Georgia; text-align: center; padding: 0px 0;">Nota</h4>
+      </div>
+    </div>
+    """
+    html_card_footer1_mat="""
+    <div class="card">
+      <div class="card-body" style="border-radius: 0px 0px 10px 10px; background: #ffd8f8; padding-top: 12px; width: 350px;
+       height: 50px;">
+        <p class="card-title" style="background-color:#ffd8f8; color:#C81F6D; font-family:Georgia; text-align: center; padding: 0px 0;">Nota máxima: 1000</p>
+      </div>
+    </div>
+    """
+    html_card_header2_mat="""
+    <div class="card">
+      <div class="card-body" style="border-radius: 10px 10px 0px 0px; background: #ffd8f8; padding-top: 12px; width: 350px;
+       height: 50px;">
+        <h4 class="card-title" style="background-color:#ffd8f8; color:#C81F6D; font-family:Georgia; text-align: center; padding: 0px 0;">Número de acertos</h4>
+      </div>
+    </div>
+    """
+    html_card_footer2_mat="""
+    <div class="card">
+      <div class="card-body" style="border-radius: 0px 0px 10px 10px; background: #ffd8f8; padding-top: 12px; width: 350px;
+       height: 50px;">
+        <p class="card-title" style="background-color:#ffd8f8; color:#C81F6D; font-family:Georgia; text-align: center; padding: 0px 0;">Total de questões: 90</p>
+      </div>
+    </div>
+    """
+    html_card_header3_mat="""
+    <div class="card">
+      <div class="card-body" style="border-radius: 10px 10px 0px 0px; background: #ffd8f8; padding-top: 12px; width: 350px;
+       height: 50px;">
+        <h4 class="card-title" style="background-color:#ffd8f8; color:#C81F6D; font-family:Georgia; text-align: center; padding: 0px 0;">Classificação</h4>
+      </div>
+    </div>
+    """
+    html_card_footer3_mat="""
+    <div class="card">
+      <div class="card-body" style="border-radius: 0px 0px 10px 10px; background: #ffd8f8; padding-top: 12px; width: 350px;
+       height: 50px;">
+        <p class="card-title" style="background-color:#ffd8f8; color:#C81F6D; font-family:Georgia; text-align: center; padding: 0px 0;">Quantidade de alunos: """+str(numero_candidatos)+"""</p>
+      </div>
+    </div>
+    """
