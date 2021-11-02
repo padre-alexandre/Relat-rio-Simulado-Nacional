@@ -585,7 +585,7 @@ if nome_aluno3 != 'Nome':
         texto = str(round(100*(numero_candidatos-(classificacao_aluno_mat['index'][0]+1))/numero_candidatos,0))[0:ponto]
         html_card_header_destaques_mat="""
         <div class="card">
-          <div class="card-body" style="border-radius: 10px 10px 0px 0px; background: #ffd8f8; padding-top: 60px; width: 550px;
+          <div class="card-body" style="border-radius: 10px 10px 0px 0px; background: #ffd8f8; padding-top: 60px; width: 495px;
            height: 150px;">
             <h5 class="card-title" style="background-color:#ffd8f8; color:#C81F6D; font-family:Georgia; text-align: center; padding: 10px 0;">Você foi melhor que """+texto+"""% dos alunos!</h5>
           </div>
@@ -715,7 +715,7 @@ if nome_aluno3 != 'Nome':
         texto = str(round(100*(numero_candidatos-(classificacao_aluno_lin['index'][0]+1))/numero_candidatos,0))[0:ponto]
         html_card_header_destaques_lin="""
         <div class="card">
-          <div class="card-body" style="border-radius: 10px 10px 0px 0px; background: #ffd8f8; padding-top: 60px; width: 550px;
+          <div class="card-body" style="border-radius: 10px 10px 0px 0px; background: #ffd8f8; padding-top: 60px; width: 495px;
            height: 150px;">
             <h5 class="card-title" style="background-color:#ffd8f8; color:#C81F6D; font-family:Georgia; text-align: center; padding: 10px 0;">Você foi melhor que """+texto+"""% dos alunos!</h5>
           </div>
@@ -862,7 +862,7 @@ if nome_aluno3 != 'Nome':
       
         html_card_header_destaques_cie="""
         <div class="card">
-          <div class="card-body" style="border-radius: 10px 10px 0px 0px; background: #ffd8f8; padding-top: 60px; width: 550px;
+          <div class="card-body" style="border-radius: 10px 10px 0px 0px; background: #ffd8f8; padding-top: 60px; width: 495px;
            height: 150px;">
             <h5 class="card-title" style="background-color:#ffd8f8; color:#C81F6D; font-family:Georgia; text-align: center; padding: 10px 0;">Você foi melhor que """+texto+"""% dos alunos!</h5>
           </div>
