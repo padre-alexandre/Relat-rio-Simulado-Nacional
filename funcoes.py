@@ -15,3 +15,7 @@ def classificacao_cor(value):
     else:
         color = '#910a08'
     return 'color: %s' % color
+
+def truncar(num, digits):
+    sp = str(num).split('.')
+    return float(str(sp[0])+'.'+str(sp[1][0:digits]))
