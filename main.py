@@ -877,7 +877,7 @@ if nome_aluno3 != 'Nome':
                 st.write("")
             with col2:
                # create the bins
-                counts, bins = np.histogram(4*resultados_gerais_disciplina3_lin['Nota na questão'], bins=range(0, 1100, 100))
+                counts, bins = np.histogram(4*resultados_gerais_disciplina3_fim['Nota na questão'], bins=range(0, 1100, 100))
                 bins = 0.5 * (bins[:-1] + bins[1:])
                 fig = px.bar(x=bins, y=counts, labels={'x':'Nota na questão', 'y':'Número de alunos'})
                 fig.update_layout(title={'text': "Distribuição de notas", 'x': 0.5}, paper_bgcolor="#FFF0FC", 
