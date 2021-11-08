@@ -206,7 +206,7 @@ if len(nome_aluno3['Nome do aluno(a)']) > 0:
     <div class="card">
       <div class="card-body" style="border-radius: 10px 10px 10px 10px; background: #c5ffff; padding-top: 12px; width: 350px;
        height: 50px;">
-        <p class="card-title" style="background-color:#c5ffff; color:#008181; font-family:Georgia; text-align: center; padding: 0px 0;">Média Geral: """+str(int(round(truncar(resultados_gerais5['Acerto'][0],-1),0)))+"""</p>
+        <p class="card-title" style="background-color:#c5ffff; color:#008181; font-family:Georgia; text-align: center; padding: 0px 0;">Média Geral: """+str(int(round(truncar(resultados_gerais5['Acerto'][0],0),0)))+"""</p>
       </div>
     </div>
     """
