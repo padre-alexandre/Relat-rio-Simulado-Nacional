@@ -1839,12 +1839,12 @@ if len(nome_aluno3['Nome do aluno(a)']) > 0:
         html_table_questoes=""" 
         <table bordercolor=#FFF0FC>
           <tr style="background-color:#ffd8f8; height: 90px; color:#C81F6D; font-family:Georgia; font-size: 17px; text-align: center">
-            <th style="width:200px; bordercolor=#FFF0FC">Número da questão</th>
+            <th style="width:150px; bordercolor=#FFF0FC">Número da questão</th>
             <th style="width:200px; bordercolor=#FFF0FC">Área do conhecimento</th>
             <th style="width:350px; bordercolor=#FFF0FC">Assunto</th>
             <th style="width:150px; bordercolor=#FFF0FC">Sua resposta</th>
             <th style="width:150px; bordercolor=#FFF0FC">Gabarito</th>
-            <th style="width:200px; bordercolor=#FFF0FC">Seu resultado</th>
+            <th style="width:150px; bordercolor=#FFF0FC">Seu resultado</th>
             <th style="width:200px; bordercolor=#FFF0FC">Porcentagem de acerto geral</th>
             <th style="width:200px; bordercolor=#FFF0FC">Tempo na questão</th>
             <th style="width:200px; bordercolor=#FFF0FC">Tempo médio na questão</th>
