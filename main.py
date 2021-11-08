@@ -1842,9 +1842,9 @@ if len(nome_aluno3['Nome do aluno(a)']) > 0:
             <th style="width:150px; bordercolor=#FFF0FC">Número da questão</th>
             <th style="width:200px; bordercolor=#FFF0FC">Área do conhecimento</th>
             <th style="width:350px; bordercolor=#FFF0FC">Assunto</th>
-            <th style="width:150px; bordercolor=#FFF0FC">Sua resposta</th>
-            <th style="width:150px; bordercolor=#FFF0FC">Gabarito</th>
-            <th style="width:150px; bordercolor=#FFF0FC">Seu resultado</th>
+            <th style="width:100px; bordercolor=#FFF0FC">Sua resposta</th>
+            <th style="width:100px; bordercolor=#FFF0FC">Gabarito</th>
+            <th style="width:100px; bordercolor=#FFF0FC">Seu resultado</th>
             <th style="width:200px; bordercolor=#FFF0FC">Porcentagem de acerto geral</th>
             <th style="width:200px; bordercolor=#FFF0FC">Tempo na questão</th>
             <th style="width:200px; bordercolor=#FFF0FC">Tempo médio na questão</th>
@@ -2846,7 +2846,7 @@ if len(nome_aluno3['Nome do aluno(a)']) > 0:
         """
 
         with st.container():
-            col1, col2, col3 = st.columns([1, 20, 1])
+            col1, col2, col3 = st.columns([0.5, 20, 0.5])
             with col1:
                 st.write("")
             with col2:
