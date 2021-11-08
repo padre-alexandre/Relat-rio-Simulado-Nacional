@@ -87,7 +87,7 @@ html_header="""
 
 html_card_instagram="""
     <div class="card">
-      <div class="card-body" style="border-radius: 10px 10px 10px 10px; background: #c5ffff; padding-top: 12px; width: 250px;
+      <div class="card-body" style="border-radius: 10px 10px 10px 10px; background: #c5ffff; padding-top: 12px; width: 300px;
        height: 50px;">
         <p class="card-title" style="background-color:#c5ffff; color:#008181; font-family:Georgia; text-align: center; padding: 0px 0;">Instagram: @jazz_vestibular</p>
       </div>
@@ -95,7 +95,7 @@ html_card_instagram="""
     """
 html_card_whatsapp="""
     <div class="card">
-      <div class="card-body" style="border-radius: 10px 10px 10px 10px; background: #a5ffa5; padding-top: 12px; width: 250px;
+      <div class="card-body" style="border-radius: 10px 10px 10px 10px; background: #a5ffa5; padding-top: 12px; width: 300px;
        height: 50px;">
         <p class="card-title" style="background-color:#a5ffa5; color:#008800; font-size:16px; font-family:Georgia; text-align: center; padding: 0px 0;">Whatsapp: (11) 93046-8509</p>
       </div>
