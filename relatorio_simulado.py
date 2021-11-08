@@ -1737,3 +1737,184 @@ if login_aluno != '':
           </div>
         </div>
         """
+        if len(ciencias_tabela_verde_ordenado) > 0:
+            html_card_header_melhores_resultados1_cie="""
+            <div class="card">
+              <div class="card-body" style="border-radius: 10px 10px 10px 10px; background: #a5ffa5; padding-top: 12px; width: 495px;
+               height: 50px;">
+                <p class="card-title" style="background-color:#a5ffa5; color:#008800; font-size: 20px;  font-family:Georgia; text-align: center; padding: 0px 0;">🟢 """+str(ciencias_tabela_verde_ordenado['Assunto'][0])+"""</p>
+              </div>
+            </div>
+            """
+        if len(ciencias_tabela_verde_ordenado) > 1:
+            html_card_header_melhores_resultados2_cie="""
+            <div class="card">
+              <div class="card-body" style="border-radius: 10px 10px 10px 10px; background: #a5ffa5; padding-top: 12px; width: 495px;
+               height: 50px;">
+                <p class="card-title" style="background-color:#a5ffa5; color:#008800; font-size: 20px;  font-family:Georgia; text-align: center; padding: 0px 0;">🟢 """+str(ciencias_tabela_verde_ordenado['Assunto'][1])+"""</p>
+              </div>
+            </div>
+            """
+        if len(ciencias_tabela_verde_ordenado) > 2:
+            html_card_header_melhores_resultados3_cie="""
+            <div class="card">
+              <div class="card-body" style="border-radius: 10px 10px 10px 10px; background: #a5ffa5; padding-top: 12px; width: 495px;
+               height: 50px;">
+                <p class="card-title" style="background-color:#a5ffa5; color:#008800; font-size: 20px;  font-family:Georgia; text-align: center; padding: 0px 0;">🟢 """+str(ciencias_tabela_verde_ordenado['Assunto'][2])+"""</p>
+              </div>
+            </div>
+            """
+        html_card_header_pontos_melhorar_cie="""
+        <div class="card">
+          <div class="card-body" style="border-radius: 10px 10px 0px 0px; background: #ffd8f8; padding-top: 30px; width: 495px;
+           height: 100px;">
+            <h5 class="card-title" style="background-color:#ffd8f8; color:#C81F6D; font-family:Georgia; text-align: center; padding: 10px 0;">Pontos que você pode melhorar</h5>
+          </div>
+        </div>
+        """
+        if len(ciencias_tabela_vermelho_ordenado) > 0:
+            html_card_header_pontos_melhorar1_cie="""
+            <div class="card">
+              <div class="card-body" style="border-radius: 10px 10px 10px 10px; background: #ffb1b1; padding-top: 12px; width: 495px;
+               height: 50px;">
+                <p class="card-title" style="background-color:#ffb1b1; color:#a80000; font-size: 20px;  font-family:Georgia; text-align: center; padding: 0px 0;">🔴 """+str(ciencias_tabela_vermelho_ordenado['Assunto'][0])+"""</p>
+              </div>
+            </div>
+            """
+        if len(ciencias_tabela_vermelho_ordenado) > 1:
+            html_card_header_pontos_melhorar2_cie="""
+            <div class="card">
+              <div class="card-body" style="border-radius: 10px 10px 10px 10px; background: #ffb1b1; padding-top: 12px; width: 495px;
+               height: 50px;">
+                <p class="card-title" style="background-color:#ffb1b1; color:#a80000; font-size: 20px;  font-family:Georgia; text-align: center; padding: 0px 0;">🔴 """+str(ciencias_tabela_vermelho_ordenado['Assunto'][1])+"""</p>
+              </div>
+            </div>
+            """
+        if len(ciencias_tabela_vermelho_ordenado) > 2:
+            html_card_header_pontos_melhorar3_cie="""
+            <div class="card">
+              <div class="card-body" style="border-radius: 10px 10px 10px 10px; background: #ffb1b1; padding-top: 12px; width: 495px;
+               height: 50px;">
+                <p class="card-title" style="background-color:#ffb1b1; color:#a80000; font-size: 20px;  font-family:Georgia; text-align: center; padding: 0px 0;">🔴 """+str(ciencias_tabela_vermelho_ordenado['Assunto'][2])+"""</p>
+              </div>
+            </div>
+            """
+        
+        with st.container():
+            col1, col2, col3, col4 = st.columns([0.5,12,0.5,10.5])
+            with col1:
+                st.write("")
+            with col2:
+                st.markdown(html_table_cie, unsafe_allow_html=True)
+            with col3:
+                st.write("")
+            with col4:
+                st.markdown(html_card_header_melhores_resultados_cie, unsafe_allow_html=True)
+                st.markdown(html_br, unsafe_allow_html=True)
+                if len(ciencias_tabela_verde_ordenado) > 0:
+                    st.markdown(html_card_header_melhores_resultados1_cie, unsafe_allow_html=True)
+                    st.markdown(html_br, unsafe_allow_html=True)
+                if len(ciencias_tabela_verde_ordenado) > 1:
+                    st.markdown(html_card_header_melhores_resultados2_cie, unsafe_allow_html=True)
+                    st.markdown(html_br, unsafe_allow_html=True)
+                if len(ciencias_tabela_verde_ordenado) > 2:
+                    st.markdown(html_card_header_melhores_resultados3_cie, unsafe_allow_html=True)
+                    st.markdown(html_br, unsafe_allow_html=True)
+
+                st.markdown(html_br, unsafe_allow_html=True)
+                st.markdown(html_card_header_pontos_melhorar_cie, unsafe_allow_html=True)
+                st.markdown(html_br, unsafe_allow_html=True)
+                if len(ciencias_tabela_vermelho_ordenado) > 0:
+                    st.markdown(html_card_header_pontos_melhorar1_cie, unsafe_allow_html=True)
+                    st.markdown(html_br, unsafe_allow_html=True)
+                if len(ciencias_tabela_vermelho_ordenado) > 1:
+                    st.markdown(html_card_header_pontos_melhorar2_cie, unsafe_allow_html=True)
+                    st.markdown(html_br, unsafe_allow_html=True)
+                if len(ciencias_tabela_vermelho_ordenado) > 2:
+                    st.markdown(html_card_header_pontos_melhorar3_cie, unsafe_allow_html=True)
+                    st.markdown(html_br, unsafe_allow_html=True)
+
+        st.markdown(html_br, unsafe_allow_html=True)
+        st.markdown(html_br, unsafe_allow_html=True)
+
+        html_subtitle="""
+        <h2 style="color:#FF00CE; font-family:Georgia;"> DETALHAMENTO POR QUESTÃO
+        <hr style= "  display: block;
+          margin-top: 0.5em;
+          margin-bottom: 0.5em;
+          margin-left: auto;
+          margin-right: auto;
+          border-style: inset;
+          border-width: 1.5px;"></h2>
+        """
+        st.markdown(html_subtitle, unsafe_allow_html=True)
+        
+        
+        tabela_detalhes = base_alunos_fizeram.copy()
+        
+        for i in range(len(tabela_detalhes['Nome do aluno(a)'])):
+            if tabela_detalhes['Resposta do aluno(a)'][i] == 'a':
+                tabela_detalhes['Resposta do aluno(a)'][i] = 'A'
+            elif tabela_detalhes['Resposta do aluno(a)'][i] == 'b':
+                tabela_detalhes['Resposta do aluno(a)'][i] = 'B'
+            elif tabela_detalhes['Resposta do aluno(a)'][i] == 'c':
+                tabela_detalhes['Resposta do aluno(a)'][i] = 'C'
+            elif tabela_detalhes['Resposta do aluno(a)'][i] == 'd':
+                tabela_detalhes['Resposta do aluno(a)'][i] = 'D'
+            elif tabela_detalhes['Resposta do aluno(a)'][i] == 'e':
+                tabela_detalhes['Resposta do aluno(a)'][i] = 'E'
+            else:
+                tabela_detalhes['Resposta do aluno(a)'][i] = ''
+
+            if tabela_detalhes['Gabarito'][i] == 'a':
+                tabela_detalhes['Gabarito'][i] = 'A'
+            elif tabela_detalhes['Gabarito'][i] == 'b':
+                tabela_detalhes['Gabarito'][i] = 'B'
+            elif tabela_detalhes['Gabarito'][i] == 'c':
+                tabela_detalhes['Gabarito'][i] = 'C'
+            elif tabela_detalhes['Gabarito'][i] == 'd':
+                tabela_detalhes['Gabarito'][i] = 'D'
+            elif tabela_detalhes['Gabarito'][i] == 'e':
+                tabela_detalhes['Gabarito'][i] = 'E'
+            else:
+                tabela_detalhes['Gabarito'][i] = ''
+        
+        tabela_detalhes_aluno = tabela_detalhes[tabela_detalhes['Login do aluno(a)'] == login_aluno]
+        tabela_detalhes_aluno2 = tabela_detalhes_aluno.drop(columns = ['Nota na questão','Valor da questão','Nome do aluno(a)','Login do aluno(a)','Certo ou errado'])
+        tabela_detalhes_media = tabela_detalhes.groupby('Número da questão').mean().reset_index()
+        tabela_detalhes_media2 = tabela_detalhes_media.drop(columns = ['Nota na questão','Valor da questão'])
+
+        tabela_detalhes_aluno3 = pd.merge(tabela_detalhes_aluno2, tabela_detalhes_media2, on = 'Número da questão', how = 'inner')
+        
+        for i in range(len(tabela_detalhes_aluno3['Número da questão'])):
+            if tabela_detalhes_aluno3['Número da questão'][i] > 90:
+                tabela_detalhes_aluno3['Número da questão'][i] = tabela_detalhes_aluno3['Número da questão'][i] - 30
+        
+        tabela_detalhes_aluno4 = tabela_detalhes_aluno3.drop(columns = ['Nome da avaliação','Turma'])
+        
+        cor_back = []
+        cor_texto = []
+        for i in range(len(tabela_detalhes_aluno4['Número da questão'])):
+            minutes, seconds= divmod(tabela_detalhes_aluno4['Tempo na questão_x'][i], 60)
+            aux1 = str(round(minutes,0)).find('.')
+            texto1 = str(round(minutes,0))[0:aux1]
+            aux2 = str(round(seconds,0)).find('.')  
+            texto2 = str(round(seconds,0))[0:aux2]  
+            tabela_detalhes_aluno4['Tempo na questão_x'][i] = texto1+' min '+texto2+' s' 
+            minutes, seconds= divmod(tabela_detalhes_aluno4['Tempo na questão_y'][i], 60)
+            aux1 = str(round(minutes,0)).find('.')
+            texto1 = str(round(minutes,0))[0:aux1]
+            aux2 = str(round(seconds,0)).find('.')  
+            texto2 = str(round(seconds,0))[0:aux2]  
+            tabela_detalhes_aluno4['Tempo na questão_y'][i] = texto1+' min '+texto2+' s' 
+            tabela_detalhes_aluno4['Acerto_x'][i] = "{0:.0%}".format(tabela_detalhes_aluno4['Acerto_x'][i])
+            tabela_detalhes_aluno4['Acerto_y'][i] = "{0:.0%}".format(tabela_detalhes_aluno4['Acerto_y'][i])
+            if tabela_detalhes_aluno4['Acerto_x'][i] == '100%':
+                cor_back.append('#a5ffa5')
+                cor_texto.append('#008800')
+            else:
+                cor_back.append('#ffb1b1')
+                cor_texto.append('#a80000')
+
+        tabela_detalhes_aluno4 = tabela_detalhes_aluno4[['Número da questão','Disciplina','Assunto','Resposta do aluno(a)','Gabarito','Acerto_x','Acerto_y','Tempo na questão_x','Tempo na questão_y']]
+        tabela_detalhes_aluno4.rename(columns = {'Disciplina':'Área do conhecimento','Acerto_x':'Resultado Individual','Acerto_y':'Resultado Geral','Tempo na questão_x':'Tempo na questão','Tempo na questão_y':'Média geral'}, inplace = True)
