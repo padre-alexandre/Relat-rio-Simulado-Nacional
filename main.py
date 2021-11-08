@@ -259,7 +259,7 @@ if len(nome_aluno3['Nome do aluno(a)']) > 0:
                 mode="number+delta",
                 value=resultados_gerais_aluno['Acerto'][0],
                 number={'suffix': "", "font": {"size": 40, 'color': "#C81F6D", 'family': "Arial"}, 'valueformat': ',f'},
-                delta={'position': "bottom", 'reference': int(round(truncar(resultados_gerais5['Acerto'][0],1),0))},
+                delta={'position': "bottom", 'reference': int(round(resultados_gerais5['Acerto'][0],0))},
                 domain={'x': [0, 1], 'y': [0, 1]}))
             fig_c2.update_layout(autosize=False,
                                  width=350, height=90, margin=dict(l=20, r=20, b=20, t=50),
