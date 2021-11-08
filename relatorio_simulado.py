@@ -1281,3 +1281,250 @@ if login_aluno != '':
 
         </table>
         """
+
+        html_card_header_melhores_resultados_lin="""
+        <div class="card">
+          <div class="card-body" style="border-radius: 10px 10px 0px 0px; background: #ffd8f8; padding-top: 30px; width: 495px;
+           height: 100px;">
+            <h5 class="card-title" style="background-color:#ffd8f8; color:#C81F6D; font-family:Georgia; text-align: center; padding: 10px 0;">Seus melhores resultados</h5>
+          </div>
+        </div>
+        """
+        if len(linguagens_tabela_verde_ordenado) > 0:
+            html_card_header_melhores_resultados1_lin="""
+            <div class="card">
+              <div class="card-body" style="border-radius: 10px 10px 10px 10px; background: #a5ffa5; padding-top: 12px; width: 495px;
+               height: 50px;">
+                <p class="card-title" style="background-color:#a5ffa5; color:#008800; font-size: 20px;  font-family:Georgia; text-align: center; padding: 0px 0;">🟢 """+str(linguagens_tabela_verde_ordenado['Assunto'][0])+"""</p>
+              </div>
+            </div>
+            """
+        if len(linguagens_tabela_verde_ordenado) > 1:
+            html_card_header_melhores_resultados2_lin="""
+            <div class="card">
+              <div class="card-body" style="border-radius: 10px 10px 10px 10px; background: #a5ffa5; padding-top: 12px; width: 495px;
+               height: 50px;">
+                <p class="card-title" style="background-color:#a5ffa5; color:#008800; font-size: 20px;  font-family:Georgia; text-align: center; padding: 0px 0;">🟢 """+str(linguagens_tabela_verde_ordenado['Assunto'][1])+"""</p>
+              </div>
+            </div>
+            """
+        if len(linguagens_tabela_verde_ordenado) > 2:
+            html_card_header_melhores_resultados3_lin="""
+            <div class="card">
+              <div class="card-body" style="border-radius: 10px 10px 10px 10px; background: #a5ffa5; padding-top: 12px; width: 495px;
+               height: 50px;">
+                <p class="card-title" style="background-color:#a5ffa5; color:#008800; font-size: 20px;  font-family:Georgia; text-align: center; padding: 0px 0;">🟢 """+str(linguagens_tabela_verde_ordenado['Assunto'][2])+"""</p>
+              </div>
+            </div>
+            """
+        html_card_header_pontos_melhorar_lin="""
+        <div class="card">
+          <div class="card-body" style="border-radius: 10px 10px 0px 0px; background: #ffd8f8; padding-top: 30px; width: 495px;
+           height: 100px;">
+            <h5 class="card-title" style="background-color:#ffd8f8; color:#C81F6D; font-family:Georgia; text-align: center; padding: 10px 0;">Pontos que você pode melhorar</h5>
+          </div>
+        </div>
+        """
+        if len(linguagens_tabela_vermelho_ordenado) > 0:
+            html_card_header_pontos_melhorar1_lin="""
+            <div class="card">
+              <div class="card-body" style="border-radius: 10px 10px 10px 10px; background: #ffb1b1; padding-top: 12px; width: 495px;
+               height: 50px;">
+                <p class="card-title" style="background-color:#ffb1b1; color:#a80000; font-size: 20px;  font-family:Georgia; text-align: center; padding: 0px 0;">🔴 """+str(linguagens_tabela_vermelho_ordenado['Assunto'][0])+"""</p>
+              </div>
+            </div>
+            """
+        if len(linguagens_tabela_vermelho_ordenado) > 1:
+            html_card_header_pontos_melhorar2_lin="""
+            <div class="card">
+              <div class="card-body" style="border-radius: 10px 10px 10px 10px; background: #ffb1b1; padding-top: 12px; width: 495px;
+               height: 50px;">
+                <p class="card-title" style="background-color:#ffb1b1; color:#a80000; font-size: 20px;  font-family:Georgia; text-align: center; padding: 0px 0;">🔴 """+str(linguagens_tabela_vermelho_ordenado['Assunto'][1])+"""</p>
+              </div>
+            </div>
+            """
+        if len(linguagens_tabela_vermelho_ordenado) > 2:
+            html_card_header_pontos_melhorar3_lin="""
+            <div class="card">
+              <div class="card-body" style="border-radius: 10px 10px 10px 10px; background: #ffb1b1; padding-top: 12px; width: 495px;
+               height: 50px;">
+                <p class="card-title" style="background-color:#ffb1b1; color:#a80000; font-size: 20px;  font-family:Georgia; text-align: center; padding: 0px 0;">🔴 """+str(linguagens_tabela_vermelho_ordenado['Assunto'][2])+"""</p>
+              </div>
+            </div>
+            """
+        
+        with st.container():
+            col1, col2, col3, col4 = st.columns([0.5,12,0.5,10.5])
+            with col1:
+                st.write("")
+            with col2:
+                st.markdown(html_table_lin, unsafe_allow_html=True)
+            with col3:
+                st.write("")
+            with col4:
+                st.markdown(html_card_header_melhores_resultados_lin, unsafe_allow_html=True)
+                st.markdown(html_br, unsafe_allow_html=True)
+                if len(linguagens_tabela_verde_ordenado) > 0:
+                    st.markdown(html_card_header_melhores_resultados1_lin, unsafe_allow_html=True)
+                    st.markdown(html_br, unsafe_allow_html=True)
+                if len(linguagens_tabela_verde_ordenado) > 1:
+                    st.markdown(html_card_header_melhores_resultados2_lin, unsafe_allow_html=True)
+                    st.markdown(html_br, unsafe_allow_html=True)
+                if len(linguagens_tabela_verde_ordenado) > 2:
+                    st.markdown(html_card_header_melhores_resultados3_lin, unsafe_allow_html=True)
+                    st.markdown(html_br, unsafe_allow_html=True)
+
+                st.markdown(html_br, unsafe_allow_html=True)
+                st.markdown(html_card_header_pontos_melhorar_lin, unsafe_allow_html=True)
+                st.markdown(html_br, unsafe_allow_html=True)
+                if len(linguagens_tabela_vermelho_ordenado) > 0:
+                    st.markdown(html_card_header_pontos_melhorar1_lin, unsafe_allow_html=True)
+                    st.markdown(html_br, unsafe_allow_html=True)
+                if len(linguagens_tabela_vermelho_ordenado) > 1:
+                    st.markdown(html_card_header_pontos_melhorar2_lin, unsafe_allow_html=True)
+                    st.markdown(html_br, unsafe_allow_html=True)
+                if len(linguagens_tabela_vermelho_ordenado) > 2:
+                    st.markdown(html_card_header_pontos_melhorar3_lin, unsafe_allow_html=True)
+                    st.markdown(html_br, unsafe_allow_html=True)
+
+        st.markdown(html_br, unsafe_allow_html=True)
+
+        if resultados_gerais_aluno['Turma'][0] != 'Simulado Nacional - Engenharia' and resultados_gerais_aluno['Turma'][0] != 'Simulado Nacional - Ciências da Computação':
+            ciencias_detalhes = base_alunos_fizeram[base_alunos_fizeram['Disciplina'] == 'Ciências Humanas']
+        else:
+            ciencias_detalhes = base_alunos_fizeram[base_alunos_fizeram['Disciplina'] == 'Ciências da Natureza']
+    
+        ciencias_detalhes_media = ciencias_detalhes.groupby('Assunto').mean().reset_index()
+
+        ciencias_aluno = ciencias_detalhes[ciencias_detalhes['Login do aluno(a)'] == login_aluno]
+
+        ciencias_aluno_media = ciencias_aluno.groupby('Assunto').mean().reset_index()
+        ciencias_aluno_media2 = ciencias_aluno.groupby('Assunto').count().reset_index()
+        ciencias_aluno_media3 = pd.DataFrame()
+        ciencias_aluno_media3['Assunto'] = ciencias_aluno_media2['Assunto']
+        ciencias_aluno_media3['Número da questão'] = ciencias_aluno_media2['Número da questão']
+
+        ciencias_tabela = pd.merge(ciencias_aluno_media,ciencias_detalhes_media, on = 'Assunto', how = 'inner')
+        ciencias_tabela2 = ciencias_tabela.drop(columns = ['Número da questão_x','Número da questão_y','Valor da questão_x','Valor da questão_y','Nota na questão_x','Nota na questão_y','Tempo na questão_x','Tempo na questão_y'])
+        ciencias_tabela2.rename(columns = {'Acerto_x':'Resultado Individual decimal','Acerto_y':'Resultado Geral decimal'}, inplace = True)
+        ciencias_tabela2['Resultado Geral'] = ''
+        ciencias_tabela2['Resultado Individual'] = ''
+        for i in range(len(ciencias_tabela2['Assunto'])):
+            ciencias_tabela2['Resultado Geral'][i] = "{0:.0%}".format(ciencias_tabela2['Resultado Geral decimal'][i])
+            ciencias_tabela2['Resultado Individual'][i] = "{0:.0%}".format(ciencias_tabela2['Resultado Individual decimal'][i])
+        ciencias_tabela3 = pd.merge(ciencias_tabela2,ciencias_aluno_media3, on = 'Assunto', how = 'inner')
+        ciencias_tabela3.rename(columns = {'Número da questão':'Quantidade de questões'}, inplace = True)
+        ciencias_tabela3 = ciencias_tabela3[['Assunto','Quantidade de questões','Resultado Individual', 'Resultado Geral','Resultado Individual decimal', 'Resultado Geral decimal']]
+        ciencias_tabela3['Status'] = ''
+        for i in range(len(ciencias_tabela3['Assunto'])):
+            if ciencias_tabela3['Resultado Individual decimal'][i] == 0:
+                ciencias_tabela3['Status'][i] = "🔴" 
+            elif ciencias_tabela3['Resultado Individual decimal'][i] >= ciencias_tabela3['Resultado Geral decimal'][i]:
+                ciencias_tabela3['Status'][i] = "🟢"
+            elif ciencias_tabela3['Resultado Individual decimal'][i] - ciencias_tabela3['Resultado Geral decimal'][i] > - 0.25:
+                ciencias_tabela3['Status'][i] = "🟡"
+            else:
+                ciencias_tabela3['Status'][i] = "🔴"
+        ciencias_tabela3['Diferença'] = ''
+        for i in range(len(ciencias_tabela3['Assunto'])):
+            ciencias_tabela3['Diferença'][i] = ciencias_tabela3['Resultado Individual decimal'][i] - ciencias_tabela3['Resultado Geral decimal'][i]
+
+        ciencias_tabela_ordenado = ciencias_tabela3.sort_values(by = 'Diferença')
+
+        ciencias_tabela_verde = ciencias_tabela_ordenado[ciencias_tabela_ordenado['Status'] == '🟢']
+        ciencias_tabela_verde_ordenado = ciencias_tabela_verde.sort_values(by = 'Diferença', ascending = False).reset_index(drop = True)
+
+        ciencias_tabela_vermelho = ciencias_tabela_ordenado[ciencias_tabela_ordenado['Status'] == '🔴']
+        ciencias_tabela_vermelho_ordenado = ciencias_tabela_vermelho.sort_values(by = 'Diferença', ascending = True).reset_index(drop = True)
+
+        html_header_hum="""
+        <h2 style="font-size:200%; color: #FF00CE; font-family:Georgia"> CIÊNCIAS HUMANAS<br>
+         <hr style= "  display: block;
+          margin-top: 0.5em;
+          margin-bottom: 0.5em;
+          margin-left: auto;
+          margin-right: auto;
+          border-style: inset;
+          border-width: 1.5px;"></h2>
+        """
+
+        html_header_nat="""
+        <h2 style="font-size:200%; color: #FF00CE; font-family:Georgia"> CIÊNCIAS DA NATUREZA<br>
+         <hr style= "  display: block;
+          margin-top: 0.5em;
+          margin-bottom: 0.5em;
+          margin-left: auto;
+          margin-right: auto;
+          border-style: inset;
+          border-width: 1.5px;"></h2>
+        """
+        if len(resultados_ciencias_hum['Disciplina']) == 0:
+            st.markdown(html_header_nat, unsafe_allow_html=True)
+        else:
+            st.markdown(html_header_hum, unsafe_allow_html=True)
+
+        ### Block 1#########################################################################################
+        with st.container():
+            col1, col2, col3, col4, col5, col6, col7 = st.columns([1,20,1,20,1,20,1])
+            with col1:
+                st.write("")
+            with col2:
+                st.markdown(html_card_header1_disc, unsafe_allow_html=True)
+                fig_c1 = go.Figure(go.Indicator(
+                    mode="number+delta",
+                    value=round(resultados_ciencias_fim['Nota na questão'][0],1),
+                    number={'suffix': "", "font": {"size": 40, 'color': "#C81F6D", 'family': "Arial"}},
+                    delta={'position': "bottom", 'reference': int(round(truncar(resultados_gerais_disciplina_med_cie['Nota na questão'][0],-1),0)), 'relative': False},
+                    domain={'x': [0, 1], 'y': [0, 1]}))
+                fig_c1.update_layout(autosize=False,
+                                     width=350, height=90, margin=dict(l=20, r=20, b=20, t=50),
+                                     paper_bgcolor="#FFF0FC", font={'size': 20})
+                st.plotly_chart(fig_c1)
+                st.markdown(html_card_footer1_disc, unsafe_allow_html=True)
+                st.markdown(html_br, unsafe_allow_html=True)
+                st.markdown(html_card_footer1_disc_med_cie, unsafe_allow_html=True)
+            with col3:
+                st.write("")
+            with col4:
+                st.markdown(html_card_header2_disc, unsafe_allow_html=True)
+                fig_c2 = go.Figure(go.Indicator(
+                    mode="number+delta",
+                    value=resultados_ciencias_fim['Acerto'][0],
+                    number={'suffix': "", "font": {"size": 40, 'color': "#C81F6D", 'family': "Arial"}, 'valueformat': ',f'},
+                    delta={'position': "bottom", 'reference': int(round(truncar(resultados_gerais_disciplina_med_cie['Acerto'][0],-1),0))},
+                    domain={'x': [0, 1], 'y': [0, 1]}))
+                fig_c2.update_layout(autosize=False,
+                                     width=350, height=90, margin=dict(l=20, r=20, b=20, t=50),
+                                     paper_bgcolor="#FFF0FC", font={'size': 20})
+                fig_c2.update_traces(delta_decreasing_color="#FF4136",
+                                 delta_increasing_color="#3D9970",
+                                 delta_valueformat='f',
+                                 selector=dict(type='indicator'))
+                st.plotly_chart(fig_c2)
+                st.markdown(html_card_footer2_disc, unsafe_allow_html=True)
+                st.markdown(html_br, unsafe_allow_html=True)
+                st.markdown(html_card_footer2_disc_med_cie, unsafe_allow_html=True)
+            with col5:
+                st.write("")
+            with col6:
+                st.markdown(html_card_header3_disc, unsafe_allow_html=True)
+                fig_c3 = go.Figure(go.Indicator(
+                    mode="number",
+                    value=classificacao_aluno_fim['index'][0]+1,
+                    number={'suffix': "º", "font": {"size": 40, 'color': "#C81F6D", 'family': "Arial"}},
+                    delta={'position': "bottom", 'reference': 1, 'relative': False},
+                    domain={'x': [0, 1], 'y': [0, 1]}))
+                fig_c3.update_layout(autosize=False,
+                                     width=350, height=90, margin=dict(l=20, r=20, b=20, t=50),
+                                     paper_bgcolor="#FFF0FC", font={'size': 20})
+                fig_c3.update_traces(delta_decreasing_color="#3D9970",
+                                     delta_increasing_color="#FF4136",
+                                     delta_valueformat='.3f',
+                                     selector=dict(type='indicator'))
+                st.plotly_chart(fig_c3)
+                st.markdown(html_card_footer3_disc, unsafe_allow_html=True)
+            with col7:
+                st.write("")
+        html_br="""
+        <br>
+        """
