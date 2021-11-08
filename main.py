@@ -1504,10 +1504,10 @@ if len(nome_aluno3['Nome do aluno(a)']) > 0:
         <table bordercolor=#FFF0FC>
           <tr style="background-color:#ffd8f8; height: 90px; color:#C81F6D; font-family:Georgia; font-size: 17px; text-align: center">
             <th style="width:350px; bordercolor=#FFF0FC">Assunto</th>
-            <th style="width:150px; bordercolor=#FFF0FC">Quantidade de questões</th>
-            <th style="width:150px; bordercolor=#FFF0FC">Resultado Individual</th>
-            <th style="width:150px; bordercolor=#FFF0FC">Resultado Geral</th>
-            <th style="width:150px; bordercolor=#FFF0FC">Status</th>
+            <th style="width:100px; bordercolor=#FFF0FC">Quantidade de questões</th>
+            <th style="width:100px; bordercolor=#FFF0FC">Resultado Individual</th>
+            <th style="width:100px; bordercolor=#FFF0FC">Resultado Geral</th>
+            <th style="width:100px; bordercolor=#FFF0FC">Status</th>
           </tr>
           <tr style="height: 42px; color:#C81F6D; font-size: 16px;text-align: center">
             <th>"""+str(ciencias_tabela3['Assunto'][0])+"""</th>
