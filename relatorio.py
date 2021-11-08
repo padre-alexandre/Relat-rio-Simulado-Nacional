@@ -27,7 +27,7 @@ import plotly.graph_objects as go
 from funcoes import *
 from matplotlib import pyplot as plt
 from load_css import local_css
-#from datetime import datetime
+from datetime import datetime
 
 
 ### Configurando a página
@@ -46,21 +46,21 @@ local_css("style.css")
 # Fonte: Arial
 
 ######################### Banco de Dados ########################
-#import gspread
-#from oauth2client.service_account import ServiceAccountCredentials
-#
-#scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
-#creds = ServiceAccountCredentials.from_json_keyfile_name('client_secret.json', scope)
-#client = gspread.authorize(creds)
-#
-##sheet = client.open('Banco de Dados - Relatório Simulado Nacional').sheet1          # Enquanto estiver rodando na nuvem
-#sheet = client.open('Banco de Dados - Relatório Simulado Nacional - Teste').sheet1   # Enquanto estiver rodando no local
-#
-##### Colunas (id, Data e Hora, Nome, Rede, Grupo, Gestor, Produto, Faixa de licenças, Namespace, NPS, Feedback)
-#row0 = ['Data e Hora', 'Turma','Nome','Login']
-#
-#banco_de_dados = sheet.get_all_records()
-#banco_de_dados2 = pd.DataFrame(banco_de_dados)
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+
+scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
+creds = ServiceAccountCredentials.from_json_keyfile_name('client_secret.json', scope)
+client = gspread.authorize(creds)
+
+#sheet = client.open('Banco de Dados - Relatório Simulado Nacional').sheet1          # Enquanto estiver rodando na nuvem
+sheet = client.open('Banco de Dados - Relatório Simulado Nacional - Teste').sheet1   # Enquanto estiver rodando no local
+
+#### Colunas (id, Data e Hora, Nome, Rede, Grupo, Gestor, Produto, Faixa de licenças, Namespace, NPS, Feedback)
+row0 = ['Data e Hora', 'Turma','Nome','Login']
+
+banco_de_dados = sheet.get_all_records()
+banco_de_dados2 = pd.DataFrame(banco_de_dados)
 
 ### Cabeçalho principal
 
@@ -85,6 +85,48 @@ html_header="""
   border-width: 1.5px;"></h1>
 """
 
+html_card_instagram="""
+    <div class="card">
+      <div class="card-body" style="border-radius: 10px 10px 10px 10px; background: #c5ffff; padding-top: 12px; width: 350px;
+       height: 50px;">
+        <p class="card-title" style="background-color:#c5ffff; color:#008181; font-family:Georgia; text-align: center; padding: 0px 0;">Instagram: @jazz_vestibular</p>
+      </div>
+    </div>
+    """
+html_card_whatsapp="""
+    <div class="card">
+      <div class="card-body" style="border-radius: 10px 10px 10px 10px; background: #a5ffa5; padding-top: 12px; width: 350px;
+       height: 50px;">
+        <p class="card-title" style="background-color:#a5ffa5; color:#008800; font-size:16px; font-family:Georgia; text-align: center; padding: 0px 0;">Whatsapp: (11) 93046-8509</p>
+      </div>
+    </div>
+    """
+html_br="""
+    <br>
+    """
+
+with st.container():
+        col1, col2, col3 = st.columns([10, 5, 5])
+        with col1:
+            st.image('[LOGO] Jazz.png')
+        with col2:
+            st.markdown(html_br, unsafe_allow_html=True)
+            st.markdown(html_br, unsafe_allow_html=True)
+            st.markdown(html_br, unsafe_allow_html=True)
+            st.markdown(html_br, unsafe_allow_html=True)
+            st.markdown(html_card_instagram, unsafe_allow_html=True)
+            st.markdown(html_br, unsafe_allow_html=True)
+            st.write("##### [Clique aqui para conhecer nossa página](https://www.instagram.com/jazz_vestibular/)")
+        with col3:
+            st.markdown(html_br, unsafe_allow_html=True)
+            st.markdown(html_br, unsafe_allow_html=True)
+            st.markdown(html_br, unsafe_allow_html=True)
+            st.markdown(html_br, unsafe_allow_html=True)
+            st.markdown(html_card_whatsapp, unsafe_allow_html=True)
+            st.markdown(html_br, unsafe_allow_html=True)
+            st.write("##### [Clique aqui para falar conosco](https://api.whatsapp.com/send?phone=55011930468509)")
+
+st.markdown(html_br, unsafe_allow_html=True)
 st.markdown(html_header, unsafe_allow_html=True)
 
 ### Leitura das bases de dados
@@ -135,20 +177,43 @@ resultados_gerais3 = resultados_gerais2.sort_values(by = 'Nota na questão', asc
 ### Selecionar o aluno
 login_aluno = st.text_input('Digite o seu login', '')
 
+
 #nome_aluno = resultados_gerais3.sort_values(by = 'Nome do aluno(a)')
 #nome_aluno2 = inserir_linha(pd.DataFrame(data = nome_aluno['Nome do aluno(a)'].unique()),pd.DataFrame({0: 'Nome'}, index=[-1]))
 #nome_aluno3 = str(st.selectbox('Selecione o aluno(a)',nome_aluno2[0]))
-nome_aluno3 = resultados_gerais3[resultados_gerais3['Login do aluno(a)'] == login_aluno]['Nome do aluno(a)'].reset_index()
 
-#row = [str(datetime.today()),nome_aluno3['Turma'][0],nome_aluno3['Nome do aluno(a)'][0],login_aluno]
-#index = 2
-#sheet.insert_row(row, index)
+if len(login_aluno) > 0:
+    nome_aluno3 = resultados_gerais3[resultados_gerais3['Login do aluno(a)'] == login_aluno]['Nome do aluno(a)'].reset_index()
+    turma_aluno = resultados_gerais3[resultados_gerais3['Login do aluno(a)'] == login_aluno]['Turma'].reset_index() 
+    row = [str(datetime.today()),turma_aluno['Turma'][0],nome_aluno3['Nome do aluno(a)'][0],login_aluno]
+    index = 2
+    sheet.insert_row(row, index)
 
-html_br="""
-<br>
-"""
-st.markdown(html_br, unsafe_allow_html=True)
-if len(nome_aluno3['Nome do aluno(a)']) > 0:
+
+    html_br="""
+    <br>
+    """
+    html_download_pdfs="""
+    <h2 style="font-size:200%; color: #FF00CE; font-family:Georgia">PDFs DO SIMULADO<br>
+     <hr style= "  display: block;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      margin-left: auto;
+      margin-right: auto;
+      border-style: inset;
+      border-width: 1.5px;"></h2>
+    """
+    st.markdown(html_download_pdfs, unsafe_allow_html=True)
+    st.markdown(get_binary_file_downloader_html('Simulado Nacional Insper 1º fase - Matemática e Linguagens.pdf', 'Simulado de Matemática e Linguagens'), unsafe_allow_html=True)
+    if turma_aluno['Turma'][0] == 'Simulado Nacional - Engenharia' or turma_aluno['Turma'][0] == 'Simulado Nacional - Ciências da Computação':
+        st.markdown(get_binary_file_downloader_html('Simulado Nacional Insper 1º fase - Ciências da Natureza.pdf', 'Simulado de Ciências da Natureza'), unsafe_allow_html=True)
+    else:
+        st.markdown(get_binary_file_downloader_html('Simulado Nacional Insper 1º fase - Ciências Humanas.pdf', 'Simulado de Ciências Humanas'), unsafe_allow_html=True)
+    html_br="""
+    <br>
+    """
+    st.markdown(html_br, unsafe_allow_html=True)
+if login_aluno != '':
 
     resultados_gerais_aluno = resultados_gerais3[resultados_gerais3['Nome do aluno(a)'] == nome_aluno3['Nome do aluno(a)'][0]].reset_index()
     resultados_gerais_aluno.rename(columns = {'index':'Classificação'}, inplace = True)
@@ -336,7 +401,7 @@ if len(nome_aluno3['Nome do aluno(a)']) > 0:
             # create the bins
             counts, bins = np.histogram(resultados_gerais4['Nota na questão'], bins=range(0, 1100, 100))
             bins = 0.5 * (bins[:-1] + bins[1:])
-            fig = px.bar(x=bins, y=counts, labels={'x':'Nota na questão', 'y':'Número de alunos'})
+            fig = px.bar(x=bins, y=counts, labels={'x':'Nota no simulado', 'y':'Número de alunos'})
             fig.update_layout(title={'text': "Distribuição de notas", 'x': 0.5}, paper_bgcolor="#FFF0FC", 
                            plot_bgcolor="#FFF0FC", font={'color': "#C81F6D", 'size': 14, 'family': "Georgia"}, height=400,
                            width=540,
@@ -694,7 +759,7 @@ if len(nome_aluno3['Nome do aluno(a)']) > 0:
                # create the bins
                 counts, bins = np.histogram(resultados_gerais_disciplina3_mat['Nota na questão'], bins=range(0, 1100, 100))
                 bins = 0.5 * (bins[:-1] + bins[1:])
-                fig = px.bar(x=bins, y=counts, labels={'x':'Nota na questão', 'y':'Número de alunos'})
+                fig = px.bar(x=bins, y=counts, labels={'x':'Nota no simulado', 'y':'Número de alunos'})
                 fig.update_layout(title={'text': "Distribuição de notas", 'x': 0.5}, paper_bgcolor="#FFF0FC", 
                                plot_bgcolor="#FFF0FC", font={'color': "#C81F6D", 'size': 14, 'family': "Georgia"}, height=400,
                                width=540,
@@ -724,7 +789,7 @@ if len(nome_aluno3['Nome do aluno(a)']) > 0:
                 st.write("")
 
         st.markdown(html_br, unsafe_allow_html=True)
-        
+
         html_table=""" 
         <table bordercolor=#FFF0FC>
           <tr style="background-color:#ffd8f8; height: 90px; color:#C81F6D; font-family:Georgia; font-size: 17px; text-align: center">
@@ -914,7 +979,6 @@ if len(nome_aluno3['Nome do aluno(a)']) > 0:
               </div>
             </div>
             """
-        
         with st.container():
             col1, col2, col3, col4 = st.columns([0.5,12,0.5,10.5])
             with col1:
@@ -1010,7 +1074,6 @@ if len(nome_aluno3['Nome do aluno(a)']) > 0:
           border-width: 1.5px;"></h2>
         """
         st.markdown(html_header_lin, unsafe_allow_html=True)
-
         ### Block 1#########################################################################################
         with st.container():
             col1, col2, col3, col4, col5, col6, col7 = st.columns([1,20,1,20,1,20,1])
@@ -1099,7 +1162,7 @@ if len(nome_aluno3['Nome do aluno(a)']) > 0:
                # create the bins
                 counts, bins = np.histogram(resultados_gerais_disciplina3_lin['Nota na questão'], bins=range(0, 1100, 100))
                 bins = 0.5 * (bins[:-1] + bins[1:])
-                fig = px.bar(x=bins, y=counts, labels={'x':'Nota na questão', 'y':'Número de alunos'})
+                fig = px.bar(x=bins, y=counts, labels={'x':'Nota no simulado', 'y':'Número de alunos'})
                 fig.update_layout(title={'text': "Distribuição de notas", 'x': 0.5}, paper_bgcolor="#FFF0FC", 
                                plot_bgcolor="#FFF0FC", font={'color': "#C81F6D", 'size': 14, 'family': "Georgia"}, height=400,
                                width=540,
@@ -1217,7 +1280,6 @@ if len(nome_aluno3['Nome do aluno(a)']) > 0:
 
         </table>
         """
-
         html_card_header_melhores_resultados_lin="""
         <div class="card">
           <div class="card-body" style="border-radius: 10px 10px 0px 0px; background: #ffd8f8; padding-top: 30px; width: 495px;
@@ -1491,7 +1553,7 @@ if len(nome_aluno3['Nome do aluno(a)']) > 0:
                # create the bins
                 counts, bins = np.histogram(resultados_gerais_disciplina3_fim['Nota na questão'], bins=range(0, 1100, 100))
                 bins = 0.5 * (bins[:-1] + bins[1:])
-                fig = px.bar(x=bins, y=counts, labels={'x':'Nota na questão', 'y':'Número de alunos'})
+                fig = px.bar(x=bins, y=counts, labels={'x':'Nota no simulado', 'y':'Número de alunos'})
                 fig.update_layout(title={'text': "Distribuição de notas", 'x': 0.5}, paper_bgcolor="#FFF0FC", 
                                plot_bgcolor="#FFF0FC", font={'color': "#C81F6D", 'size': 14, 'family': "Georgia"}, height=400,
                                width=540,
@@ -1519,7 +1581,6 @@ if len(nome_aluno3['Nome do aluno(a)']) > 0:
                 st.markdown(html_card_header_destaques_cie, unsafe_allow_html=True)
             with col5:
                 st.write("")
-
         html_table_cie=""" 
         <table bordercolor=#FFF0FC>
           <tr style="background-color:#ffd8f8; height: 90px; color:#C81F6D; font-family:Georgia; font-size: 17px; text-align: center">
@@ -2864,7 +2925,6 @@ if len(nome_aluno3['Nome do aluno(a)']) > 0:
 
         </table>
         """
-
         with st.container():
             col1, col2, col3 = st.columns([0.5, 20, 0.5])
             with col1:
@@ -2873,4 +2933,3 @@ if len(nome_aluno3['Nome do aluno(a)']) > 0:
                 st.markdown(html_table_questoes, unsafe_allow_html=True)
             with col3:
                 st.write("")
-        
