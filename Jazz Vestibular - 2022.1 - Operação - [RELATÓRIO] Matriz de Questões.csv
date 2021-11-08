@@ -1,0 +1,121 @@
+num_exercicio,disciplina,assunto
+1,Linguagens,Interpretação de Texto
+2,Linguagens,Interpretação de Texto
+3,Linguagens,Interpretação de Texto
+4,Linguagens,Interpretação de Texto
+5,Linguagens,Interpretação de Texto
+6,Linguagens,Interpretação de Texto
+7,Linguagens,Interpretação de Texto
+8,Linguagens,Interpretação de Texto
+9,Linguagens,Interpretação de Texto
+10,Linguagens,Interpretação de Texto
+11,Linguagens,Figuras de Linguagem
+12,Linguagens,Interpretação de Texto
+13,Linguagens,Orações Subordinadas
+14,Linguagens,Interpretação de Texto
+15,Linguagens,Interpretação de Texto
+16,Linguagens,Interpretação de Texto
+17,Linguagens,Literatura
+18,Linguagens,Funções da Lingagem
+19,Linguagens,Tipos de discurso
+20,Linguagens,Tipos de texto
+21,Linguagens,Figuras de Linguagem
+22,Linguagens,Crase
+23,Linguagens,Sintaxe
+24,Linguagens,Termos da Oração
+25,Linguagens,Interpretação de Texto
+26,Linguagens,Interpretação de Texto
+27,Linguagens,Termos da Oração
+28,Linguagens,Variedade Linguística
+29,Linguagens,Interpretação de Texto
+30,Linguagens,Interpretação de Texto
+31,Matemática,Geometria Espacial
+32,Matemática,Geometria Espacial
+33,Matemática,Geometria Espacial
+34,Matemática,Geometria Espacial
+35,Matemática,Geometria Plana
+36,Matemática,Geometria Plana
+37,Matemática,Geometria Plana
+38,Matemática,Geometria Analítica
+39,Matemática,Geometria Analítica
+40,Matemática,Geometria Analítica
+41,Matemática,Fatoração
+42,Matemática,Fatoração
+43,Matemática,Porcentagem
+44,Matemática,Porcentagem
+45,Matemática,Porcentagem
+46,Matemática,Regra de 3
+47,Matemática,Regra de 3
+48,Matemática,Razão e proporção
+49,Matemática,Regra de 3
+50,Matemática,Juros
+51,Matemática,Probabilidade
+52,Matemática,Probabilidade
+53,Matemática,Análise Combinatória
+54,Matemática,Análise Combinatória
+55,Matemática,Função Exponencial
+56,Matemática,Função Logarítmica
+57,Matemática,Função do 2º grau
+58,Matemática,Função do 1º grau
+59,Matemática,Função do 1º grau
+60,Matemática,Conjuntos
+61,Ciências Humanas,Geografia - Geografia Urbana
+62,Ciências Humanas,Geografia - Geografia Urbana
+63,Ciências Humanas,Geografia - Geografia Agrária
+64,Ciências Humanas,Geografia - Geografia Econômica / Indústria
+65,Ciências Humanas,Geografia - Geografia Econômica / Indústria
+66,Ciências Humanas,Geografia - Geografia Agrária
+67,Ciências Humanas,Geografia - Clima
+68,Ciências Humanas,Geografia - Clima do Brasil
+69,Ciências Humanas,Geografia - Clima do Brasil
+70,Ciências Humanas,Geografia - Clima do Brasil
+71,Ciências Humanas,Geografia - Solos (Pedologia)
+72,Ciências Humanas,Geografia - Relevo (Geomorfologia)
+73,Ciências Humanas,Atualidades
+74,Ciências Humanas,Atualidades
+75,Ciências Humanas,Filosofia
+76,Ciências Humanas,Filosofia
+77,Ciências Humanas,Sociologia
+78,Ciências Humanas,Sociologia
+79,Ciências Humanas,História - Período Colonial
+80,Ciências Humanas,História - Segundo Reinado
+81,Ciências Humanas,História - Segundo Reinado
+82,Ciências Humanas,História - Primeira República
+83,Ciências Humanas,História - Era Vargas
+84,Ciências Humanas,História - República Populista
+85,Ciências Humanas,História - Idade Moderna
+86,Ciências Humanas,História - Antiguidade Clássica
+87,Ciências Humanas,História - Idade Média
+88,Ciências Humanas,História - Idade Contemporânea
+89,Ciências Humanas,História - Idade Contemporânea
+90,Ciências Humanas,História - Idade Contemporânea
+91,Ciências da Natureza,Biologia - Genética
+92,Ciências da Natureza,Biologia - Genética
+93,Ciências da Natureza,Biologia - Genética
+94,Ciências da Natureza,"Biologia - DNA, RNA e Bases Nitrogenadas"
+95,Ciências da Natureza,Biologia - Relações Ecológicas
+96,Ciências da Natureza,Biologia - Ciclos Biogeoquímicos
+97,Ciências da Natureza,Biologia - Histologia
+98,Ciências da Natureza,Biologia - Fisiologia Animal e humana
+99,Ciências da Natureza,Biologia - Evolução
+100,Ciências da Natureza,Biologia - Zoologia
+101,Ciências da Natureza,Química - Físico química
+102,Ciências da Natureza,Química - Química geral
+103,Ciências da Natureza,Química - Radioatividade
+104,Ciências da Natureza,Química - Calculo Estequiométrico
+105,Ciências da Natureza,Química - Química geral
+106,Ciências da Natureza,Química - Físico Química
+107,Ciências da Natureza,Química - Química geral
+108,Ciências da Natureza,Química - Físico química
+109,Ciências da Natureza,Química - Química geral
+110,Ciências da Natureza,Química - Físico química
+111,Ciências da Natureza,Física - Cinemática
+112,Ciências da Natureza,Física - Cinemática
+113,Ciências da Natureza,Física - Termodinâmica
+114,Ciências da Natureza,Física - Trabalho e Energia
+115,Ciências da Natureza,Física - Trabalho e Energia
+116,Ciências da Natureza,Física - Eletrodinâmica
+117,Ciências da Natureza,Física - Eletrodinâmica
+118,Ciências da Natureza,Física - Termodinâmica
+119,Ciências da Natureza,Física - Dinâmica
+120,Ciências da Natureza,Física - Gravitação
