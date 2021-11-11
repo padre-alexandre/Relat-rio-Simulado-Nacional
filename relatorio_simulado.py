@@ -214,7 +214,7 @@ if len(login_aluno) > 0:
     """
     st.markdown(html_br, unsafe_allow_html=True)
 if login_aluno != '':
-
+    resultados_gerais3.to_csv('Resultado.csv')
     resultados_gerais_aluno = resultados_gerais3[resultados_gerais3['Nome do aluno(a)'] == nome_aluno3['Nome do aluno(a)'][0]].reset_index()
     resultados_gerais_aluno.rename(columns = {'index':'Classificação'}, inplace = True)
     resultados_gerais_aluno['Classificação'][0] = resultados_gerais_aluno['Classificação'][0] + 1
